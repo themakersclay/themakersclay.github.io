@@ -1,0 +1,172 @@
+{
+ "version": 1,
+ "savedAt": "2026-10-15T07:39:49.070Z",
+ "texts": {
+  "home.title": "会呼吸的手作",
+  "home.subtitle": "everyday handmade",
+  "home.caption": "No. 01 · 梅印高足小碟\nhandbuilt stoneware",
+  "home.note": "从泥土中学习，慢下脚步",
+  "home.noteEn": "slow down · think · recover · grow",
+  "home.idx.pottery": "手作陶器",
+  "home.idx.potteryEn": "Handmade Pottery",
+  "home.idx.potteryLine": "",
+  "home.idx.handwritten": "泥手日记",
+  "home.idx.handwrittenEn": "Handwritten Goods",
+  "home.idx.handwrittenLine": "",
+  "home.idx.about": "关于我",
+  "home.idx.aboutEn": "About Me",
+  "home.idx.aboutLine": "Lydia Wong 黄惠敏",
+  "pottery.title": "手作陶器",
+  "pottery.titleEn": "Handmade Pottery",
+  "pottery.intro": "每一件都由双手捏塑而成，形状各不相同。\nEach piece is pinched and shaped by hand, so no two are alike.",
+  "handwritten.title": "泥手日记",
+  "handwritten.titleEn": "Handwritten Goods",
+  "handwritten.intro": "手写的字，带着当下的心情。\nWords written by hand, carrying the heart and mind.",
+  "about.name": "LYDIA WONG",
+  "about.nameZh": "黄惠敏",
+  "about.zh": "我来自怡保，也住过许多不同的城市。近2023年, 我第一次接触陶作，当时主要是因为治疗忧郁症而有机会尝试---从中学习慢下脚步去思考、养伤、及成长。\n\n目前 the makers clay 是个人团队，而我的丈夫与孩子是我的铁粉。我喜欢简单与安静，也喜欢透过日常趣味的东西找到并给予情绪的一个出口。\n\n面对忧郁很艰难，陶作也不容易---这些磨练虽然没有让我变得更强大，却让我看见我依然像陶瓷一样脆弱。可是虽然脆弱，我有那造我的那一位强大的原创者做我的永恒的堡垒。",
+  "about.en": "I was born in Ipoh, and lived in various cities in different parts of the world. In the recent years, I was introduced to pottery, mainly was to help cope with my prolonged depression. Through smashing, pinching, smoothing and waiting in the process, I had a chance to slow down my heart and racing thoughts to think, recover, and grow.\n\nAt the moment, I'm a solo team--along with my hubby and son as my top permanent fans. I like simpleness and quietness, and I enjoy discovering and expressing my emotions and passions through many simple yet meaningful daily stuff.\n\nIt is extremely hard coping with depression, and pottery is not easy either - battling with them didn't make me stronger. I am still the weak vessel, but I know an almighty potter, who is my Creator, to be my fortress forever.",
+  "footer.line": "HANDBUILT BY LYDIA"
+ },
+ "images": {
+  "home.pot": "img/pot.webp",
+  "home.idx.pottery": "img/pot-photo.jpg",
+  "home.idx.handwritten": "img/handwritten-cover.jpg",
+  "home.idx.about": "img/lydia.jpg",
+  "about.photo": "img/lydia.jpg"
+ },
+ "layout": {
+  "about.who": {
+   "s": 0.88,
+   "x": -1.92,
+   "y": -2.58
+  },
+  "top.avatar": {
+   "x": -81.59,
+   "y": 0.74,
+   "s": 0.82
+  },
+  "home.caption": {
+   "x": -32.73,
+   "y": 3.48
+  }
+ },
+ "theme": {
+  "colors": {
+   "paper": "#E8E2D7",
+   "paperDeep": "#DDD5C7",
+   "ink": "#2B2723",
+   "inkSoft": "#6C635A",
+   "accent": "#76857E",
+   "glow": "#FFF8EA"
+  },
+  "custom": [],
+  "fonts": {
+   "display": "ZCOOL XiaoWei",
+   "body": "Noto Sans SC",
+   "latin": "Cormorant Garamond",
+   "mono": "IBM Plex Mono"
+  },
+  "titleScale": 1
+ },
+ "textStyle": {
+  "about.en": {
+   "font": "Cormorant Garamond",
+   "size": 15
+  },
+  "about.zh": {
+   "font": "Noto Sans SC",
+   "weight": "300",
+   "size": 14
+  }
+ },
+ "removed": {
+  "home.plant": true,
+  "home.coffee": true,
+  "home.caption": true,
+  "top.avatar": true
+ },
+ "products": {
+  "pottery": [
+   {
+    "id": "p-plum",
+    "name": "甜到心花怒放 blooming sweetness",
+    "line": "刻纹口沿，碟心压一朵梅花。",
+    "price": "RM80",
+    "size": "",
+    "availability": "available",
+    "tags": [
+     "碟 Dish"
+    ],
+    "details": "",
+    "photos": [
+     "img/pot-photo.jpg",
+     "img/plum-2.jpg",
+     "img/plum-3.jpg"
+    ]
+   },
+   {
+    "id": "p-ex1",
+    "name": "阿姨的糕点 aunt's kuih dish",
+    "line": "刻画的花朵, 复古的感觉",
+    "price": "RM85",
+    "size": "—",
+    "availability": "available",
+    "tags": [
+     "碟 Dish"
+    ],
+    "details": "",
+    "photos": [
+     "img/kuih-1.jpg"
+    ]
+   },
+   {
+    "id": "p-ex2",
+    "name": "示例：浅钵",
+    "line": "照片与说明稍后补上。",
+    "price": "RM —",
+    "size": "—",
+    "availability": "sold",
+    "tags": [
+     "示例 Example",
+     "钵 Bowl"
+    ],
+    "details": "这是示例，请替换成你的作品。\nThis is an example card. Replace it with your own piece.",
+    "photos": []
+   }
+  ],
+  "handwritten": [
+   {
+    "id": "h-ex1",
+    "name": "2026 月历 Calendar",
+    "line": "照片与说明稍后补上。",
+    "price": "RM20",
+    "size": "10 x 10 cm",
+    "availability": "order",
+    "tags": [
+     "月历 Calendar"
+    ],
+    "details": "",
+    "photos": [
+     "img/calendar-1.jpg",
+     "img/calendar-2.jpg",
+     "img/calendar-3.jpg"
+    ]
+   },
+   {
+    "id": "h-ex2",
+    "name": "示例：手写书签",
+    "line": "照片与说明稍后补上。",
+    "price": "RM —",
+    "size": "—",
+    "availability": "order",
+    "tags": [
+     "示例 Example",
+     "书签 Bookmark"
+    ],
+    "details": "这是示例，请替换成你的作品。\nThis is an example card. Replace it with your own piece.",
+    "photos": []
+   }
+  ]
+ }
+}

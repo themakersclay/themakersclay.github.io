@@ -1,0 +1,1194 @@
+<!doctype html><html><head><meta charset=utf8><title>the makers clay · 会呼吸的手作</title><meta name="description" content="Handmade pottery and handwritten goods by Lydia Wong. 手作陶器与手写小物。"><meta property="og:title" content="the makers clay"><meta property="og:image" content="img/pot-photo.jpg"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=ZCOOL+XiaoWei&family=Long+Cang&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=ZCOOL+KuaiLe&family=Patrick+Hand&family=Caveat:wght@400;600&family=Shadows+Into+Light+Two&display=swap">
+<style>
+/* Layout: a quiet poster. Vertical Song-serif type stands beside one still life; 60–80% of each page is left empty. */
+:root{
+  --paper:#E8E2D7;        /* greige rice paper */
+  --paper-deep:#DDD5C7;   /* card ground */
+  --floor:#CFC3AF;        /* linen table shade */
+  --glow:#FFF8EA;         /* window light */
+  --ink:#2B2723;          /* soft sumi */
+  --ink-soft:#6C635A;
+  --hair:rgba(43,39,35,.16);
+  --glaze:#76857E;        /* celadon grey-green, taken from the dish */
+  --glaze-soft:rgba(118,133,126,.14);
+  --f-cjk:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --f-display:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  --title-scale:1;
+  --f-latin:"Cormorant Garamond","EB Garamond",Garamond,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --f-ui:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+html{background:var(--paper)}
+body{
+  background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .15 0 0 0 0 .13 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color:var(--ink);
+  font-family:var(--f-cjk);font-weight:300;font-size:15px;line-height:1.9;
+  padding-inline:clamp(16px,4vw,56px);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--glaze);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto}
+.mono{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);line-height:1.6}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;gap:clamp(14px,3vw,32px);padding-block:22px 8px;flex-wrap:wrap}
+.top .nav{margin-left:auto}
+.avatar{display:grid;justify-items:center;gap:4px;width:clamp(72px,11vw,128px)}
+.avatar .ph.round{display:block;width:100%}
+.avatar img{object-position:62% 26%}
+.avatar .mono{font-size:9px;letter-spacing:.24em}
+.avatar:hover img{transform:scale(1.04)}
+.logo{display:block;width:52px}
+.logo img{display:block;width:100%;height:auto}
+.nav{display:flex;gap:clamp(14px,3vw,40px);flex-wrap:wrap}
+.nav a{display:grid;gap:2px;font-size:13.5px;letter-spacing:.24em;padding-block:4px;border-bottom:1px solid transparent}
+.nav a span.mono{font-size:9px;letter-spacing:.24em}
+.nav a[aria-current="page"]{border-bottom-color:var(--ink)}
+.nav a:hover{border-bottom-color:var(--hair)}
+
+/* ---------- pages ---------- */
+.page{padding-block:clamp(12px,3vw,36px) 40px}
+.cq{container-type:inline-size}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(8px,3cqw,48px);align-items:start}
+.scene{position:relative;aspect-ratio:1000/640;max-width:100%;min-width:0}
+.scene::before{content:"";position:absolute;inset:-4% -2%;pointer-events:none;
+  background:
+    radial-gradient(ellipse 30% 44% at 24% 34%, rgba(255,250,240,.95), rgba(255,250,240,0) 72%),
+    radial-gradient(ellipse 62% 22% at 62% 90%, rgba(190,175,152,.55), rgba(190,175,152,0) 72%),
+    linear-gradient(to bottom, rgba(207,195,175,0) 66%, rgba(207,195,175,.42) 78%, rgba(207,195,175,.15) 100%);
+  -webkit-mask-image:radial-gradient(ellipse 52% 56% at 50% 52%, #000 62%, transparent 100%);
+          mask-image:radial-gradient(ellipse 52% 56% at 50% 52%, #000 62%, transparent 100%);
+}
+.layer{position:absolute}
+.layer svg{display:block;width:100%;height:auto;overflow:visible}
+.ground{inset:0;pointer-events:none}
+.ground svg{height:100%}
+.window{left:3%;top:0;width:39%}
+.pot{left:50%;top:46%;width:36%}
+.plant{left:6%;top:37%;width:10.5%}
+.coffee{left:37%;top:75%;width:12%}
+.steam{animation:steam 3.6s ease-in-out infinite alternate}
+@keyframes steam{from{opacity:.2;transform:translateY(3px)}to{opacity:.65;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.steam{animation:none;opacity:.45}}
+.pot img{display:block;width:100%;height:auto;position:relative;filter:brightness(1.05) saturate(.85) sepia(.05)}
+.pot-shadow{position:absolute;left:30%;right:-26%;bottom:-3%;height:16%;
+  background:radial-gradient(ellipse 50% 50% at 40% 50%, rgba(70,56,42,.42), rgba(70,56,42,0) 70%);
+  filter:blur(7px);transform:skewX(-38deg);transform-origin:left bottom}
+.pot-contact{position:absolute;left:24%;right:22%;bottom:0;height:7%;
+  background:radial-gradient(ellipse 50% 50% at 50% 55%, rgba(50,40,30,.55), rgba(50,40,30,0) 72%);filter:blur(3px)}
+.pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
+  background:linear-gradient(125deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
+  -webkit-mask:var(--pot-mask) center/100% 100% no-repeat;mask:var(--pot-mask) center/100% 100% no-repeat}
+.light{inset:0;pointer-events:none}
+.light svg{height:100%}
+.caption{right:2%;top:30%;width:max-content;max-width:26%;border-top:1px solid var(--hair);padding-top:6px}
+.caption p{margin:0;font-family:var(--f-mono);font-size:clamp(8px,1.05cqw,10.5px);letter-spacing:.18em;line-height:1.9;color:var(--ink-soft);white-space:pre-line}
+.mote{fill:var(--glow);animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0);opacity:.15}50%{opacity:.85}100%{transform:translate(14px,22px);opacity:.25}}
+@media (prefers-reduced-motion:reduce){.mote{animation:none;opacity:.5}}
+
+.title-block{writing-mode:vertical-rl;padding-top:clamp(8px,4cqw,56px);justify-self:end}
+.title-block h1{margin:0;font-family:var(--f-display);font-weight:300;font-size:calc(clamp(30px,5.2cqw,72px) * var(--title-scale));letter-spacing:.3em;line-height:1.2;margin-block-end:clamp(8px,1.6cqw,22px)}
+.title-block .sub{font-family:var(--f-mono);font-size:clamp(9px,1cqw,12px);letter-spacing:.42em;color:var(--ink-soft);margin:0;padding-top:.6em}
+
+/* ---------- home index ---------- */
+.index{display:grid;grid-template-columns:auto repeat(2,minmax(0,340px));gap:clamp(18px,4cqw,56px);margin-top:clamp(36px,7vw,96px);align-items:start}
+.index .note{writing-mode:vertical-rl;display:flex;gap:12px;font-size:15px;letter-spacing:.32em;line-height:1.5}
+.index .note .mono{font-size:9.5px;letter-spacing:.22em}
+.entry{display:grid;gap:12px;min-width:0}
+.entry .ph{aspect-ratio:4/5}
+.entry h2{margin:0;font-family:var(--f-display);font-weight:400;font-size:calc(17px * var(--title-scale));letter-spacing:.3em;line-height:1.4}
+.entry p{margin:0;font-size:13px;color:var(--ink-soft)}
+.entry .go{display:block}
+.entry .go:hover .ph img{transform:scale(1.025)}
+.ph{position:relative;overflow:hidden;background:var(--paper-deep)}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.ph.round{border-radius:50%;aspect-ratio:1}
+.ph .empty{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:12px}
+.ph .empty svg{width:42%;max-width:110px;height:auto}
+.ph .empty .mono{font-size:9px;letter-spacing:.2em}
+
+/* ---------- subpage head ---------- */
+.subhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,4cqw,64px);align-items:start;margin-bottom:clamp(28px,5vw,64px)}
+.subhead .vt{writing-mode:vertical-rl;display:flex;gap:10px}
+.subhead h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:calc(clamp(22px,2.6vw,30px) * var(--title-scale));letter-spacing:.34em;line-height:1.3}
+.subhead .vt .mono{font-size:9.5px;letter-spacing:.3em}
+.subhead .intro{margin:0;max-width:38em;white-space:pre-line;font-size:14px;color:var(--ink-soft);padding-top:8px;border-top:1px solid var(--hair)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;align-items:center}
+.filters .lab{margin-right:8px}
+.chip{border:1px solid var(--hair);background:transparent;border-radius:999px;padding:3px 12px;font-size:12px;letter-spacing:.08em;cursor:pointer;font-family:var(--f-cjk);line-height:1.6}
+.chip:hover{border-color:var(--ink-soft)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.av{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em}
+
+/* ---------- product grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:44px 28px}
+.card{min-width:0}
+.card>.thumb{all:unset;display:grid;gap:10px;cursor:pointer;width:100%;box-sizing:border-box}
+.card>.thumb:focus-visible{outline:1.5px solid var(--glaze);outline-offset:4px}
+.card .ph{aspect-ratio:4/5}
+.card:hover .ph img{transform:scale(1.025)}
+.card h3{margin:0;font-weight:400;font-size:15.5px;letter-spacing:.12em;line-height:1.5}
+.card .line{margin:0;font-size:12.5px;color:var(--ink-soft);line-height:1.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge{position:absolute;left:10px;top:10px;font-family:var(--f-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(232,226,215,.86);padding:2px 8px;color:var(--ink-soft)}
+.badge.sold{color:var(--paper);background:rgba(43,39,35,.7)}
+.card.open{grid-column:1/-1}
+.card.open>.thumb{display:none}
+.detail{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);padding-block:28px;animation:open .45s ease}
+@keyframes open{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.detail{animation:none}}
+.gallery{display:grid;gap:10px;min-width:0}
+.gallery .main{aspect-ratio:4/3}
+.gallery .main img{object-fit:contain;background:var(--paper-deep)}
+.strip{display:flex;gap:8px;flex-wrap:wrap}
+.strip .t{position:relative;width:64px;height:64px;padding:0;border:1px solid transparent;background:var(--paper-deep);cursor:pointer}
+.strip .t img{width:100%;height:100%;object-fit:cover;display:block}
+.strip .t[aria-current="true"]{border-color:var(--ink)}
+.info{display:grid;gap:18px;align-content:start;min-width:0}
+.info h3{margin:0;font-weight:400;font-size:clamp(20px,2.2vw,26px);letter-spacing:.14em;line-height:1.4}
+.info .line{margin:0;color:var(--ink-soft);font-size:14px}
+.specs{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 22px;margin:0;border-top:1px solid var(--hair);padding-top:16px}
+.specs dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+.specs dd{margin:0;font-size:14.5px;min-width:0}
+.avail{display:inline-flex;align-items:center;gap:8px}
+.avail i{width:7px;height:7px;border-radius:50%;background:var(--glaze)}
+.avail.order i{background:transparent;border:1px solid var(--glaze)}
+.avail.sold i{background:var(--ink-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.desc{white-space:pre-line;font-size:14px;margin:0;color:var(--ink)}
+.close{justify-self:start;background:none;border:none;border-bottom:1px solid var(--ink);padding:2px 0;cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase}
+.empty-grid{grid-column:1/-1;color:var(--ink-soft);font-size:13.5px;padding:24px 0;border-top:1px solid var(--hair)}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start;max-width:1040px;margin-inline:auto;padding-top:clamp(8px,3vw,40px)}
+.about .who{display:grid;gap:18px;justify-items:center;text-align:center}
+.about .ph.round{width:min(100%,260px)}
+.about .ph.round img{object-position:62% 22%}
+.about .name{font-family:var(--f-mono);font-size:13px;letter-spacing:.32em;margin:0}
+.about .nameZh{margin:-10px 0 0;font-size:14px;letter-spacing:.4em;color:var(--ink-soft)}
+.bios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.bio{margin:0;white-space:pre-line;min-width:0}
+.bio.zh{font-size:15px;letter-spacing:.12em;line-height:2.05}
+.bio.en{font-family:var(--f-latin);font-size:17px;line-height:1.7;color:#3a342e}
+
+/* ---------- footer ---------- */
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--hair);margin-top:72px;padding-block:22px 96px}
+.foot img{width:40px;display:block}
+
+/* ---------- responsive ---------- */
+@media (max-width:760px){
+  .index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .index .note{grid-column:1/-1;writing-mode:horizontal-tb;flex-direction:column;gap:4px}
+  .detail{grid-template-columns:minmax(0,1fr)}
+  .about{grid-template-columns:minmax(0,1fr)}
+  .bios{grid-template-columns:minmax(0,1fr)}
+  .subhead{grid-template-columns:minmax(0,1fr)}
+  .subhead .vt{writing-mode:horizontal-tb;flex-direction:column;gap:2px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
+}
+
+.order-btn{justify-self:start;display:inline-block;background:var(--ink);color:var(--paper);padding:11px 26px;letter-spacing:.2em;font-size:13.5px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.order-btn:hover{background:transparent;color:var(--ink)}
+.soldnote{margin:0;color:var(--ink-soft);font-size:13.5px;letter-spacing:.14em}
+/* ---------- edit mode ---------- */
+.edit-only{display:none!important}
+body.editing .edit-only{display:revert!important}
+body.editing [data-text]{cursor:text;outline:1px dashed rgba(118,133,126,.45);outline-offset:2px}
+body.editing [data-text]:focus{outline:1.5px solid var(--glaze);background:rgba(255,250,240,.5)}
+body.editing [data-move]{outline:1px dashed rgba(118,133,126,.8);outline-offset:5px}
+[data-move]{translate:var(--dx,0) var(--dy,0);scale:var(--sc,1)}
+.mv-ctl{pointer-events:auto;position:absolute;left:0;top:-30px;z-index:30;display:flex;gap:2px;writing-mode:horizontal-tb;font-family:var(--f-ui);font-size:11px;line-height:1;white-space:nowrap}
+.mv-ctl button,.ebtn{font-family:var(--f-ui);font-size:11.5px;line-height:1;border:1px solid rgba(43,39,35,.28);background:#F6F2EA;color:var(--ink);padding:6px 8px;border-radius:3px;cursor:pointer;letter-spacing:0}
+.mv-ctl button:hover,.ebtn:hover{background:#fff}
+.mv-ctl .mv-handle{cursor:grab;touch-action:none;background:var(--ink);color:#F6F2EA;border-color:var(--ink)}
+.mv-ctl .mv-handle:active{cursor:grabbing}
+.mv-ctl .mv-del{color:#8a2d1f;border-color:rgba(138,45,31,.5)}
+.card-del{margin-top:8px}
+.ebtn.primary{background:var(--ink);color:#F6F2EA;border-color:var(--ink)}
+.ebtn.danger{color:#8a2d1f;border-color:rgba(138,45,31,.5)}
+.img-btn{position:absolute;left:8px;bottom:8px;z-index:25}
+.pot .img-btn{left:0;bottom:-34px}
+.bar{position:fixed;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 32px);font-family:var(--f-ui)}
+.bar .status{font-size:12px;color:var(--ink-soft);background:rgba(246,242,234,.92);padding:6px 10px;border-radius:3px}
+.bar .status:empty{display:none}
+.notice{position:fixed;left:16px;right:16px;top:calc(12px + env(safe-area-inset-top,0px));z-index:60;max-width:560px;margin-inline:auto;background:#F6F2EA;border:1px solid var(--hair);padding:12px 14px;font-family:var(--f-ui);font-size:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 6px 24px rgba(43,39,35,.08)}
+.notice span{flex:1 1 220px}
+.hint{font-family:var(--f-ui);font-size:12px;color:var(--ink-soft);background:var(--glaze-soft);padding:8px 12px;margin-bottom:18px;border-radius:3px}
+.form{display:grid;gap:12px;font-family:var(--f-ui);font-size:12.5px}
+.form label{display:grid;gap:4px;color:var(--ink-soft)}
+.form input,.form select,.form textarea{font-family:var(--f-cjk);font-size:14px;color:var(--ink);background:#F6F2EA;border:1px solid rgba(43,39,35,.22);border-radius:3px;padding:7px 9px;width:100%;box-sizing:border-box}
+.form textarea{min-height:110px;resize:vertical;line-height:1.7}
+.form .row{display:flex;gap:6px;flex-wrap:wrap}
+.strip .t .x{position:absolute;right:-6px;top:-6px;width:20px;height:20px;border-radius:50%;padding:0;font-size:12px;line-height:18px;text-align:center;background:var(--ink);color:#F6F2EA;border:none;cursor:pointer}
+.light>.mv-ctl,.top [data-move]>.mv-ctl{left:auto;right:0}
+html,body{overflow-x:clip}
+
+/* ---------- phones & small tablets (Android) ---------- */
+@media (max-width:760px){
+  .top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;row-gap:12px}
+  .top .nav{grid-column:1/-1;grid-row:2;margin-left:0;justify-content:space-between;gap:6px}
+  .top>[data-move="top.avatar"]{grid-column:3;grid-row:1}
+  .avatar{width:58px}
+  .avatar .mono{display:none}
+}
+@media (max-width:600px){
+  .nav a{font-size:13px;letter-spacing:.14em}
+  .nav a span.mono{letter-spacing:.12em}
+  .hero{grid-template-columns:minmax(0,1fr);gap:14px}
+  .title-block{writing-mode:horizontal-tb;order:-1;justify-self:start;padding-top:4px}
+  .title-block h1{font-size:calc(36px * var(--title-scale));letter-spacing:.16em;margin-block-end:2px}
+  .title-block .sub{padding-top:0;font-size:11px;letter-spacing:.3em}
+  .caption{top:2%;right:0;max-width:44%}
+  .about .ph.round{width:min(70%,220px)}
+  .mv-ctl .lbl{display:none}
+  .mv-ctl button{padding:7px 9px;font-size:13px}
+  body .panel{left:8px;right:8px;width:auto;top:auto;bottom:calc(58px + env(safe-area-inset-bottom,0px));max-height:56vh}
+  body .tpanel{left:8px;right:8px;width:auto;max-height:56vh}
+  .bar{right:8px;max-width:calc(100% - 16px)}
+}
+.add-card{all:unset;white-space:pre-line;box-sizing:border-box;display:grid;place-items:center;aspect-ratio:4/5;border:1px dashed rgba(43,39,35,.35);cursor:pointer;font-family:var(--f-ui);font-size:13px;color:var(--ink-soft);text-align:center;padding:12px}
+.add-card:hover{background:rgba(255,250,240,.5)}
+.add-card:focus-visible{outline:1.5px solid var(--glaze)}
+.panel{position:fixed;z-index:56;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:min(340px,calc(100% - 32px));max-height:calc(100% - 110px);overflow:auto;box-sizing:border-box;background:#F6F2EA;color:#2B2723;border:1px solid rgba(43,39,35,.2);box-shadow:0 10px 30px rgba(43,39,35,.14);padding:14px 16px;font-family:var(--f-ui);font-size:12.5px;line-height:1.4;display:grid;gap:9px;align-content:start}
+.tpanel{right:auto;left:16px;top:auto;bottom:calc(64px + env(safe-area-inset-bottom,0px));width:min(380px,calc(100% - 32px));max-height:min(62vh,520px)}
+.panel h4{margin:6px 0 0;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6C635A;font-weight:600}
+.panel-head{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.panel .rows{display:grid;gap:6px}
+.panel .crow{display:grid;grid-template-columns:minmax(0,1fr) 40px 64px;gap:8px;align-items:center;color:#2B2723}
+.panel .crow.custom{grid-template-columns:minmax(0,1fr) 40px auto}
+.panel label{display:grid;gap:3px;color:#6C635A}
+.panel input[type=color]{width:40px;height:28px;padding:0;border:1px solid rgba(43,39,35,.25);border-radius:3px;background:none;cursor:pointer}
+.panel select,.panel input[type=text],.panel input[type=number]{font:inherit;padding:5px 7px;border:1px solid rgba(43,39,35,.25);border-radius:3px;background:#fff;color:#2B2723;width:100%;box-sizing:border-box}
+.panel input[type=range]{width:100%;accent-color:#2B2723}
+.panel .row{display:flex;gap:6px;flex-wrap:wrap}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.swrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#6C635A}
+.swatches{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.sw{width:22px;height:22px;border-radius:50%;border:1px solid rgba(43,39,35,.3);cursor:pointer;padding:0;font-size:12px;line-height:20px;text-align:center;background:#fff;color:#6C635A}
+.sw[aria-pressed="true"]{outline:2px solid #2B2723;outline-offset:2px}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6C635A;font-weight:400;letter-spacing:0;text-transform:none}
+.ebtn[aria-pressed="true"]{background:#2B2723;color:#F6F2EA}
+body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:3px}
+</style>
+
+<div class="wrap">
+  <header class="top cq">
+    <a class="logo" href="#home" aria-label="the makers clay, home"><img src="img/logo.png" alt="the makers clay"></a>
+    <nav class="nav" aria-label="Pages">
+      <a href="#home" data-nav="home">首页<span class="mono">Home</span></a>
+      <a href="#pottery" data-nav="pottery">手作陶器<span class="mono">Pottery</span></a>
+      <a href="#handwritten" data-nav="handwritten">手写小物<span class="mono">Handwritten</span></a>
+      <a href="#about" data-nav="about">关于我<span class="mono">About</span></a>
+    </nav>
+    <div data-move="top.avatar">
+      <a class="avatar" href="#about" aria-label="关于我 About me"><span class="ph round"><img data-img="home.idx.about" alt="Lydia Wong"></span><span class="mono">About me</span></a>
+      <button class="ebtn edit-only" data-for="home.idx.about" type="button" style="margin-top:6px">换照片 Replace</button>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <main id="page-home" class="page cq" data-page="home">
+    <section class="hero cq">
+      <div class="scene cq" aria-label="A pen-drawn window with one door open lets soft light fall onto a handbuilt footed dish, beside a cup of coffee and a potted plant">
+        <div class="layer ground"><svg id="groundSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+        <div class="layer window" data-move="home.window"><svg id="winSvg" viewBox="0 0 400 470" aria-hidden="true"></svg></div>
+        <div class="layer plant" data-move="home.plant"><svg id="plantSvg" viewBox="0 0 200 320" aria-hidden="true"></svg></div>
+        <div class="layer pot" data-move="home.pot">
+          <div class="pot-shadow"></div><div class="pot-contact"></div>
+          <img data-img="home.pot" src="img/pot.webp" alt="Handbuilt footed dish with an incised rim and a plum-blossom stamp">
+          <div class="pot-glow"></div>
+          <button class="ebtn img-btn edit-only" data-for="home.pot" type="button">换照片 Replace photo</button>
+        </div>
+        <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
+        <div class="layer light" data-move="home.light"><svg id="lightSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+        <div class="layer caption" data-move="home.caption"><p data-text="home.caption"></p></div>
+      </div>
+      <div class="title-block" data-move="home.title">
+        <h1 data-text="home.title"></h1>
+        <p class="sub" data-text="home.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="index cq">
+      <div class="note" data-move="home.note">
+        <span data-text="home.note"></span>
+        <span class="mono" data-text="home.noteEn"></span>
+      </div>
+      <article class="entry" data-move="home.idx.pottery">
+        <a class="go" href="#pottery"><div class="ph"><img data-img="home.idx.pottery" alt="Handmade pottery"></div></a>
+        <button class="ebtn img-btn edit-only" data-for="home.idx.pottery" type="button" style="position:static;justify-self:start">换照片 Replace photo</button>
+        <a href="#pottery"><h2 data-text="home.idx.pottery"></h2></a>
+        <span class="mono" data-text="home.idx.potteryEn"></span>
+        <p data-text="home.idx.potteryLine"></p>
+      </article>
+      <article class="entry" data-move="home.idx.handwritten">
+        <a class="go" href="#handwritten"><div class="ph"><img data-img="home.idx.handwritten" alt="Handwritten goods"></div></a>
+        <button class="ebtn img-btn edit-only" data-for="home.idx.handwritten" type="button" style="position:static;justify-self:start">换照片 Replace photo</button>
+        <a href="#handwritten"><h2 data-text="home.idx.handwritten"></h2></a>
+        <span class="mono" data-text="home.idx.handwrittenEn"></span>
+        <p data-text="home.idx.handwrittenLine"></p>
+      </article>
+    </section>
+  </main>
+
+  <!-- POTTERY -->
+  <main id="page-pottery" class="page cq" data-page="pottery" hidden>
+    <section class="subhead">
+      <div class="vt" data-move="pottery.head"><h1 data-text="pottery.title"></h1><span class="mono" data-text="pottery.titleEn"></span></div>
+      <div data-move="pottery.intro"><p class="intro" data-text="pottery.intro"></p></div>
+    </section>
+    <p class="hint edit-only">点击作品可修改价格、尺寸、状态与标签。Open a piece to edit its price, size, availability, tags and photos.</p>
+    <div class="filters" id="filters-pottery"></div>
+    <div class="grid" id="grid-pottery"></div>
+  </main>
+
+  <!-- HANDWRITTEN -->
+  <main id="page-handwritten" class="page cq" data-page="handwritten" hidden>
+    <section class="subhead">
+      <div class="vt" data-move="handwritten.head"><h1 data-text="handwritten.title"></h1><span class="mono" data-text="handwritten.titleEn"></span></div>
+      <div data-move="handwritten.intro"><p class="intro" data-text="handwritten.intro"></p></div>
+    </section>
+    <p class="hint edit-only">点击作品可修改价格、尺寸、状态与标签。Open a piece to edit its price, size, availability, tags and photos.</p>
+    <div class="filters" id="filters-handwritten"></div>
+    <div class="grid" id="grid-handwritten"></div>
+  </main>
+
+  <!-- ABOUT -->
+  <main id="page-about" class="page cq" data-page="about" hidden>
+    <section class="about">
+      <div class="who" data-move="about.who">
+        <div class="ph round"><img data-img="about.photo" alt="Portrait of Lydia Wong"></div>
+        <button class="ebtn edit-only" data-for="about.photo" type="button">换照片 Replace photo</button>
+        <p class="name" data-text="about.name"></p>
+        <p class="nameZh" data-text="about.nameZh"></p>
+      </div>
+      <div class="bios" data-move="about.bios">
+        <p class="bio zh" data-text="about.zh"></p>
+        <p class="bio en" lang="en" data-text="about.en"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="img/logo.png" alt="the makers clay">
+    <span class="mono" data-text="footer.line"></span>
+  </footer>
+</div>
+
+<input type="file" id="filePick" accept="image/*" hidden>
+<input type="file" id="filePickMulti" accept="image/*" multiple hidden>
+<div class="bar" id="bar" hidden>
+  <span class="status" id="status" role="status" aria-live="polite"></span>
+  <button class="ebtn" id="editBtn" type="button">编辑 Edit</button>
+  <button class="ebtn edit-only" id="styleBtn" type="button">样式 Style</button>
+  <button class="ebtn primary edit-only" id="saveBtn" type="button">保存 Save</button>
+</div>
+<aside class="panel" id="stylePanel" hidden aria-label="Site style">
+  <div class="panel-head"><strong>样式 Style</strong><button class="ebtn" id="styleClose" type="button">关闭 Close</button></div>
+  <h4>颜色 Colours</h4>
+  <div class="rows" id="colorRows"></div>
+  <h4>你的颜色 Your colours</h4>
+  <div class="rows" id="customRows"></div>
+  <button class="ebtn" id="addColor" type="button">+ 添加颜色 Add colour</button>
+  <h4>字体 Fonts</h4>
+  <div class="rows" id="fontRows"></div>
+  <h4>标题大小 Title size <span class="hex" id="titleScaleVal">100%</span></h4>
+  <input type="range" id="titleScale" min="0.6" max="1.6" step="0.05" aria-label="Title size">
+  <h4>已删除的项目 Deleted items</h4>
+  <div class="rows" id="removedRows"></div>
+  <button class="ebtn danger" id="themeReset" type="button">复原原本样式 Reset to original</button>
+  <p class="hex">点击页面上任何文字，可单独修改它的字体、大小、颜色等。Click any text on the page to style it on its own.</p>
+</aside>
+<aside class="panel tpanel" id="textPanel" hidden aria-label="Text style">
+  <div class="panel-head"><strong>文字样式 Text style <span class="hex" id="tpTarget"></span></strong><button class="ebtn" id="tpClose" type="button">关闭</button></div>
+  <div class="tgrid">
+    <label for="tpFont">字体 Font<select id="tpFont"></select></label>
+    <label for="tpSize">大小 Size (px)<input type="number" id="tpSize" min="6" max="240" step="1"></label>
+    <label for="tpWeight">粗细 Weight<select id="tpWeight"><option value="">默认 Default</option><option value="300">细 Light</option><option value="400">常规 Regular</option><option value="500">中 Medium</option><option value="700">粗 Bold</option></select></label>
+    <label for="tpAlign">对齐 Align<select id="tpAlign"><option value="">默认 Default</option><option value="left">左 Left</option><option value="center">中 Center</option><option value="right">右 Right</option></select></label>
+    <label for="tpLs">字距 Spacing <span class="hex" id="tpLsVal"></span><input type="range" id="tpLs" min="-0.05" max="0.8" step="0.01"></label>
+    <label for="tpLh">行距 Line height <span class="hex" id="tpLhVal"></span><input type="range" id="tpLh" min="0.9" max="3" step="0.05"></label>
+  </div>
+  <div class="row"><button class="ebtn" id="tpItalic" type="button" aria-pressed="false"><i>斜体 Italic</i></button><button class="ebtn" id="tpUnderline" type="button" aria-pressed="false"><u>下划线 Underline</u></button></div>
+  <div class="swrow"><span>颜色 Colour</span><div class="swatches" id="tpSwatches"></div><input type="color" id="tpColor" aria-label="Custom text colour"></div>
+  <button class="ebtn" id="tpClear" type="button">清除此文字样式 Clear this text's style</button>
+</aside>
+<div class="notice" id="draftNotice" hidden>
+  <span>你有上次未保存的修改。You have unsaved edits from last time.</span>
+  <button class="ebtn primary" id="draftRestore" type="button">恢复 Restore</button>
+  <button class="ebtn" id="draftDiscard" type="button">放弃 Discard</button>
+</div>
+
+<script type="application/json" id="defaults">{"version": 1, "savedAt": "2026-10-15T07:39:49.070Z", "texts": {"home.title": "会呼吸的手作", "home.subtitle": "everyday handmade", "home.caption": "No. 01 · 梅印高足小碟\nhandbuilt stoneware", "home.note": "从泥土中学习，慢下脚步", "home.noteEn": "slow down · think · recover · grow", "home.idx.pottery": "手作陶器", "home.idx.potteryEn": "Handmade Pottery", "home.idx.potteryLine": "", "home.idx.handwritten": "泥手日记", "home.idx.handwrittenEn": "Handwritten Goods", "home.idx.handwrittenLine": "", "home.idx.about": "关于我", "home.idx.aboutEn": "About Me", "home.idx.aboutLine": "Lydia Wong 黄惠敏", "pottery.title": "手作陶器", "pottery.titleEn": "Handmade Pottery", "pottery.intro": "每一件都由双手捏塑而成，形状各不相同。\nEach piece is pinched and shaped by hand, so no two are alike.", "handwritten.title": "泥手日记", "handwritten.titleEn": "Handwritten Goods", "handwritten.intro": "手写的字，带着当下的心情。\nWords written by hand, carrying the heart and mind.", "about.name": "LYDIA WONG", "about.nameZh": "黄惠敏", "about.zh": "我来自怡保，也住过许多不同的城市。近2023年, 我第一次接触陶作，当时主要是因为治疗忧郁症而有机会尝试---从中学习慢下脚步去思考、养伤、及成长。\n\n目前 the makers clay 是个人团队，而我的丈夫与孩子是我的铁粉。我喜欢简单与安静，也喜欢透过日常趣味的东西找到并给予情绪的一个出口。\n\n面对忧郁很艰难，陶作也不容易---这些磨练虽然没有让我变得更强大，却让我看见我依然像陶瓷一样脆弱。可是虽然脆弱，我有那造我的那一位强大的原创者做我的永恒的堡垒。", "about.en": "I was born in Ipoh, and lived in various cities in different parts of the world. In the recent years, I was introduced to pottery, mainly was to help cope with my prolonged depression. Through smashing, pinching, smoothing and waiting in the process, I had a chance to slow down my heart and racing thoughts to think, recover, and grow.\n\nAt the moment, I'm a solo team--along with my hubby and son as my top permanent fans. I like simpleness and quietness, and I enjoy discovering and expressing my emotions and passions through many simple yet meaningful daily stuff.\n\nIt is extremely hard coping with depression, and pottery is not easy either - battling with them didn't make me stronger. I am still the weak vessel, but I know an almighty potter, who is my Creator, to be my fortress forever.", "footer.line": "HANDBUILT BY LYDIA"}, "images": {"home.pot": "img/pot.webp", "home.idx.pottery": "img/pot-photo.jpg", "home.idx.handwritten": "img/handwritten-cover.jpg", "home.idx.about": "img/lydia.jpg", "about.photo": "img/lydia.jpg"}, "layout": {"about.who": {"s": 0.88, "x": -1.92, "y": -2.58}, "top.avatar": {"x": -81.59, "y": 0.74, "s": 0.82}, "home.caption": {"x": -32.73, "y": 3.48}}, "theme": {"colors": {"paper": "#E8E2D7", "paperDeep": "#DDD5C7", "ink": "#2B2723", "inkSoft": "#6C635A", "accent": "#76857E", "glow": "#FFF8EA"}, "custom": [], "fonts": {"display": "ZCOOL XiaoWei", "body": "Noto Sans SC", "latin": "Cormorant Garamond", "mono": "IBM Plex Mono"}, "titleScale": 1}, "textStyle": {"about.en": {"font": "Cormorant Garamond", "size": 15}, "about.zh": {"font": "Noto Sans SC", "weight": "300", "size": 14}}, "removed": {"home.plant": true, "home.coffee": true, "home.caption": true, "top.avatar": true}, "products": {"pottery": [{"id": "p-plum", "name": "甜到心花怒放 blooming sweetness", "line": "刻纹口沿，碟心压一朵梅花。", "price": "RM80", "size": "", "availability": "available", "tags": ["碟 Dish"], "details": "", "photos": ["img/pot-photo.jpg", "img/plum-2.jpg", "img/plum-3.jpg"]}, {"id": "p-ex1", "name": "阿姨的糕点 aunt's kuih dish", "line": "刻画的花朵, 复古的感觉", "price": "RM85", "size": "—", "availability": "available", "tags": ["碟 Dish"], "details": "", "photos": ["img/kuih-1.jpg"]}, {"id": "p-ex2", "name": "示例：浅钵", "line": "照片与说明稍后补上。", "price": "RM —", "size": "—", "availability": "sold", "tags": ["示例 Example", "钵 Bowl"], "details": "这是示例，请替换成你的作品。\nThis is an example card. Replace it with your own piece.", "photos": []}], "handwritten": [{"id": "h-ex1", "name": "2026 月历 Calendar", "line": "照片与说明稍后补上。", "price": "RM20", "size": "10 x 10 cm", "availability": "order", "tags": ["月历 Calendar"], "details": "", "photos": ["img/calendar-1.jpg", "img/calendar-2.jpg", "img/calendar-3.jpg"]}, {"id": "h-ex2", "name": "示例：手写书签", "line": "照片与说明稍后补上。", "price": "RM —", "size": "—", "availability": "order", "tags": ["示例 Example", "书签 Bookmark"], "details": "这是示例，请替换成你的作品。\nThis is an example card. Replace it with your own piece.", "photos": []}]}}</script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const clone = (o) => JSON.parse(JSON.stringify(o));
+  const DEFAULTS = JSON.parse($('#defaults').textContent);
+  const PAGES = ['home', 'pottery', 'handwritten', 'about'];
+  const CATS = ['pottery', 'handwritten'];
+  const AV = { available: ['有货', 'Available'], order: ['可预订', 'Made to order'], sold: ['已售出', 'Sold'] };
+
+  /* ===== SHOP SETTINGS (edit these two lines only) ===== */
+  const ORDER_FORM = 'https://tally.so/r/VLREvM';   // your Tally order form
+  const STOCK_SHEET_CSV = '';                        // paste the Google Sheet "Publish to web" CSV link here
+  /* ====================================================== */
+  const OV = { available: 'available', order: 'order', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'order', 'sold out': 'sold' };
+  function parseCSV(t) {
+    const rows = []; let r = [], c = '', q = false;
+    for (let i = 0; i < t.length; i++) {
+      const ch = t[i];
+      if (q) { if (ch === '"' && t[i + 1] === '"') { c += '"'; i++; } else if (ch === '"') q = false; else c += ch; }
+      else if (ch === '"') q = true;
+      else if (ch === ',') { r.push(c); c = ''; }
+      else if (ch === '\n') { r.push(c); rows.push(r); r = []; c = ''; }
+      else if (ch !== '\r') c += ch;
+    }
+    if (c !== '' || r.length) { r.push(c); rows.push(r); }
+    return rows;
+  }
+  async function loadStock() {
+    if (!STOCK_SHEET_CSV) return;
+    try {
+      const res = await fetch(STOCK_SHEET_CSV + (STOCK_SHEET_CSV.includes('?') ? '&' : '?') + 't=' + Date.now());
+      if (!res.ok) return;
+      const rows = parseCSV(await res.text()).filter(r => r.some(x => x.trim()));
+      if (rows.length < 2) return;
+      const head = rows[0].map(x => x.trim().toLowerCase());
+      const col = (n) => head.indexOf(n);
+      const iId = col('id'), iPrice = col('price'), iStatus = col('status');
+      if (iId < 0) return;
+      const by = {};
+      rows.slice(1).forEach(r => { const k = (r[iId] || '').trim(); if (k) by[k] = r; });
+      let changed = false;
+      for (const cat of CATS) for (const p of state.products[cat]) {
+        const r = by[p.id]; if (!r) continue;
+        const st = OV[(r[iStatus] || '').trim().toLowerCase()] || OV[(r[iStatus] || '').trim()];
+        if (st) p.availability = st;
+        const pr = (r[iPrice] || '').trim(); if (pr) p.price = pr;
+        changed = true;
+      }
+      if (changed) renderAll();
+    } catch (e) {}
+  }
+  const DRAFT_KEY = 'makersclay-draft-v1';
+  const okUrl = (u) => typeof u === 'string' && u !== '' && (/^img\//.test(u) || /^\/[^/]/.test(u) || /^https:\/\//.test(u) || /^blob:/.test(u));
+
+  let state = clone(DEFAULTS);
+  const ui = { editing: false, canEdit: false, dirty: false, open: {}, filter: {}, mainPhoto: {}, confirmDel: null, pickTarget: null };
+  let artifactNS = null, assetsNS = null;
+
+  const HEX = /^#[0-9a-f]{6}$/i;
+  const FONTS = [
+    ['Noto Serif SC', '宋体 Song serif'], ['Noto Sans SC', '黑体 Clean sans'], ['ZCOOL XiaoWei', '小薇 Soft serif'],
+    ['Long Cang', '龙藏 Handwriting'], ['Ma Shan Zheng', '马善政 Brush'], ['Zhi Mang Xing', '志莽行 Running brush'], ['ZCOOL KuaiLe', '快乐 Playful'],
+    ['Cormorant Garamond', 'Cormorant · English serif'], ['Patrick Hand', 'Patrick Hand · English handwriting'], ['Caveat', 'Caveat · English script'],
+    ['Shadows Into Light Two', 'Shadows Into Light · pen print'], ['IBM Plex Mono', 'IBM Plex Mono · typewriter']];
+  const FONT_NAMES = FONTS.map(f => f[0]);
+  const COLOR_TOKENS = [['paper', '--paper', '背景 Background'], ['paperDeep', '--paper-deep', '卡片底色 Card ground'], ['ink', '--ink', '文字 Text'], ['inkSoft', '--ink-soft', '次要文字 Soft text'], ['accent', '--glaze', '点缀 Accent'], ['glow', '--glow', '光 Light']];
+  const FONT_ROLES = [['display', '--f-display', '标题 Titles'], ['body', '--f-cjk', '中文内文 Chinese body'], ['latin', '--f-latin', '英文内文 English body'], ['mono', '--f-mono', '小标签 Small labels']];
+  const BASE_THEME = { colors: { paper: '#E8E2D7', paperDeep: '#DDD5C7', ink: '#2B2723', inkSoft: '#6C635A', accent: '#76857E', glow: '#FFF8EA' }, custom: [], fonts: { display: 'Noto Serif SC', body: 'Noto Serif SC', latin: 'Cormorant Garamond', mono: 'IBM Plex Mono' }, titleScale: 1 };
+  function mergeTheme(base, t) {
+    base = base || BASE_THEME; t = t || {};
+    const out = clone(base);
+    for (const [k] of COLOR_TOKENS) if (t.colors && HEX.test(t.colors[k] || '')) out.colors[k] = t.colors[k];
+    out.custom = Array.isArray(t.custom) ? t.custom.filter(c => c && /^[a-z0-9]+$/i.test(c.id || '') && HEX.test(c.value || '')).map(c => ({ id: c.id, name: String(c.name || '').slice(0, 40), value: c.value })) : (base.custom || []);
+    for (const [k] of FONT_ROLES) if (t.fonts && FONT_NAMES.includes(t.fonts[k])) out.fonts[k] = t.fonts[k];
+    const sc = Number(t.titleScale); if (sc >= .5 && sc <= 2) out.titleScale = sc;
+    return out;
+  }
+  function merge(base, j) {
+    return {
+      version: 1,
+      savedAt: j.savedAt || '',
+      texts: Object.assign({}, base.texts, j.texts || {}),
+      images: Object.assign({}, base.images, j.images || {}),
+      layout: Object.assign({}, j.layout || {}),
+      theme: mergeTheme(base.theme, j.theme),
+      textStyle: Object.assign({}, j.textStyle || {}),
+      removed: Object.fromEntries(Object.entries(j.removed || {}).filter(([, v]) => v === true)),
+      products: {
+        pottery: Array.isArray(j.products && j.products.pottery) ? j.products.pottery : base.products.pottery,
+        handwritten: Array.isArray(j.products && j.products.handwritten) ? j.products.handwritten : base.products.handwritten,
+      },
+    };
+  }
+
+  /* ---------------- hand-drawn scene ---------------- */
+  function rng(seed) { let s = seed; return () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  function wob(r, x1, y1, x2, y2, j) {
+    const len = Math.hypot(x2 - x1, y2 - y1), n = Math.max(2, Math.round(len / 46));
+    const nx = -(y2 - y1) / (len || 1), ny = (x2 - x1) / (len || 1);
+    let px = x1 + (r() - .5) * j, py = y1 + (r() - .5) * j, d = `M${px.toFixed(1)} ${py.toFixed(1)}`;
+    for (let i = 1; i <= n; i++) {
+      const t = i / n, off = (r() - .5) * j * 1.6;
+      const x = x1 + (x2 - x1) * t + nx * off, y = y1 + (y2 - y1) * t + ny * off;
+      const cx = (px + x) / 2 + nx * (r() - .5) * j * 2, cy = (py + y) / 2 + ny * (r() - .5) * j * 2;
+      d += ` Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}`; px = x; py = y;
+    }
+    return d;
+  }
+  function inkLine(r, out, x1, y1, x2, y2, w, o) {
+    const len = Math.hypot(x2 - x1, y2 - y1);
+    let segs = [[0, 1]];
+    if (len > 140 && r() < .45) { const t = .25 + r() * .5, g = 7 / len; segs = [[0, t - g], [t + g, 1]]; }
+    for (const [a, b] of segs) {
+      const ax = x1 + (x2 - x1) * a, ay = y1 + (y2 - y1) * a, bx = x1 + (x2 - x1) * b, by = y1 + (y2 - y1) * b;
+      out.push(`<path d="${wob(r, ax, ay, bx, by, 1.4)}" stroke-width="${w}" opacity="${o}"/>`);
+      out.push(`<path d="${wob(r, ax + .6, ay + .4, bx + .5, by + .8, 2.2)}" stroke-width="${(w * .45).toFixed(2)}" opacity="${(o * .45).toFixed(2)}"/>`);
+    }
+  }
+  function blossom(cx, cy, s) {
+    let c = '';
+    for (let i = 0; i < 5; i++) { const a = i / 5 * Math.PI * 2 - Math.PI / 2; c += `<circle cx="${(cx + Math.cos(a) * s * .55).toFixed(1)}" cy="${(cy + Math.sin(a) * s * .55).toFixed(1)}" r="${(s * .46).toFixed(1)}"/>`; }
+    return c;
+  }
+  const INK = '#2f2924';
+  // a pen line, gone over once more lightly
+  function pen(d, w = 1.4, fill = 'none', fo = 1, extra = '') {
+    return `<path d="${d}" fill="${fill}" fill-opacity="${fo}" stroke="${INK}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" ${extra}/>` +
+      `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${(w * .45).toFixed(2)}" opacity=".35" transform="translate(.8 .6)" ${extra}/>`;
+  }
+  const rough = (id) => `<filter id="${id}" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter>`;
+  function leaf(x, y, ang, s, fill, fo) {
+    const a = ang * Math.PI / 180, tx = x + Math.cos(a) * s, ty = y + Math.sin(a) * s;
+    const mx = (x + tx) / 2, my = (y + ty) / 2, px = -Math.sin(a) * s * .36, py = Math.cos(a) * s * .36;
+    const d = `M${x.toFixed(1)} ${y.toFixed(1)} Q${(mx + px).toFixed(1)} ${(my + py).toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)} Q${(mx - px).toFixed(1)} ${(my - py).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)} Z`;
+    return pen(d, 1, fill || 'none', fo == null ? 1 : fo) + pen(`M${x.toFixed(1)} ${y.toFixed(1)} L${(mx + (tx - mx) * .6).toFixed(1)} ${(my + (ty - my) * .6).toFixed(1)}`, .6);
+  }
+  function drawWindow() {
+    const r = rng(11), L = [];
+    const seg = (x1, y1, x2, y2, w = 1.4, o = .85) => inkLine(r, L, x1, y1, x2, y2, w, o);
+    // casing
+    seg(30, 22, 302, 22, 1.7); seg(30, 22, 30, 404, 1.7); seg(302, 22, 302, 404, 1.7);
+    seg(40, 32, 292, 32, 1, .55); seg(40, 32, 40, 396, 1, .55); seg(292, 32, 292, 396, 1, .55);
+    // left door, closed
+    seg(44, 36, 166, 36, 1.4); seg(44, 392, 166, 392, 1.4); seg(44, 36, 44, 392, 1.4); seg(166, 36, 166, 392, 1.5);
+    seg(58, 50, 152, 50, 1, .7); seg(58, 378, 152, 378, 1, .7); seg(58, 50, 58, 378, 1, .7); seg(152, 50, 152, 378, 1, .7);
+    // right door, swung open into the room
+    seg(288, 36, 374, 18, 1.5); seg(288, 392, 374, 410, 1.5); seg(374, 18, 374, 410, 1.6); seg(288, 36, 288, 392, 1.1, .6);
+    seg(300, 52, 362, 38, 1, .7); seg(300, 376, 362, 390, 1, .7); seg(300, 52, 300, 376, 1, .7); seg(362, 38, 362, 390, 1, .7);
+    // sill
+    seg(14, 410, 318, 407, 1.6); seg(20, 420, 312, 418, 1, .5);
+    let hatch = '';
+    for (let x = 24; x < 310; x += 8 + r() * 6) hatch += `<path d="M${x.toFixed(1)} 423 l${(-4 - r() * 4).toFixed(1)} ${(6 + r() * 5).toFixed(1)}" stroke-width=".7" opacity=".3"/>`;
+    // through the glass: a branch and a far hill line
+    let outside = pen('M300 66 C 262 90, 232 106, 196 152', 1.1) + pen('M244 100 C 238 82, 246 68, 262 60', .9) + pen('M214 128 C 196 124, 184 132, 176 144', .9) +
+      pen('M172 304 C 206 292, 246 298, 288 286', .8, 'none', 1, 'opacity=".45"') + pen('M60 318 C 92 306, 128 312, 166 300', .8, 'none', 1, 'opacity=".35"');
+    const lr = rng(5);
+    [[284, 74], [268, 84], [252, 94], [236, 108], [222, 122], [206, 140], [258, 64], [190, 136], [178, 146], [246, 78]].forEach(([x, y], i) => { outside += leaf(x, y, (i % 2 ? 200 : 120) + lr() * 50, 13 + lr() * 6); });
+    const glints = pen('M72 96 L 104 64', .9) + pen('M78 120 L 124 74', .9) + pen('M316 112 L 344 86', .8) + pen('M318 134 L 334 118', .7);
+    const hardware = pen('M158 204 C 163 204, 163 224, 158 224', 1.3) + `<circle cx="159" cy="214" r="2.6" fill="${INK}"/>` +
+      pen('M285 92 L 292 92 L 292 112 L 285 112 Z', 1) + pen('M285 312 L 292 312 L 292 332 L 285 332 Z', 1) + pen('M368 206 L 368 226', 1.8);
+    $('#winSvg').innerHTML = `
+      <defs>
+        <radialGradient id="paneGlow" cx="62%" cy="40%" r="70%"><stop offset="0" stop-color="#FFFBF3" stop-opacity="1"/><stop offset=".7" stop-color="#FFF8EA" stop-opacity=".7"/><stop offset="1" stop-color="#FFF8EA" stop-opacity="0"/></radialGradient>
+        <filter id="glowBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter>
+        <clipPath id="glass"><rect x="44" y="36" width="244" height="356"/></clipPath>
+        ${rough('roughW')}
+      </defs>
+      <rect x="40" y="30" width="256" height="368" fill="url(#paneGlow)" filter="url(#glowBlur)"/>
+      <g clip-path="url(#glass)" filter="url(#roughW)" opacity=".8">${outside}</g>
+      <g fill="none" stroke="${INK}" stroke-linecap="round" filter="url(#roughW)">${L.join('')}${hatch}</g>
+      <g filter="url(#roughW)">${glints}${hardware}</g>`;
+  }
+  function drawCoffee() {
+    $('#coffeeSvg').innerHTML = `
+      <defs>${rough('roughC')}<filter id="blurC" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+      <ellipse cx="108" cy="180" rx="88" ry="11" fill="#5a4636" opacity=".2" filter="url(#blurC)"/>
+      <g filter="url(#roughC)">
+        ${pen('M18 168 C 20 155, 180 155, 182 168 C 180 182, 20 182, 18 168 Z', 1.4, '#F6F1E7')}
+        ${pen('M56 165 C 70 159, 130 159, 144 165', .8)}
+        ${pen('M152 104 C 188 98, 190 142, 146 143', 1.5)}${pen('M150 114 C 173 112, 173 133, 147 133', 1)}
+        ${pen('M46 92 C 46 132, 62 162, 100 164 C 138 162, 154 132, 154 92 Z', 1.5, '#F6F1E7')}
+        ${pen('M46 92 C 46 80, 154 80, 154 92 C 154 104, 46 104, 46 92 Z', 1.3, '#EFE8DB')}
+        ${pen('M54 93 C 56 85, 144 85, 146 93 C 144 101, 56 101, 54 93 Z', 1, '#6E4B35', .9)}
+        ${pen('M100 91 C 94 85, 85 91, 100 98 C 115 91, 106 85, 100 91 Z', .7, '#E4CBA8', .95)}
+        ${pen('M134 112 l -2 30 M141 108 l -2 27 M147 103 l -3 23', .7)}
+      </g>
+      <g class="steam">${pen('M82 74 C 72 60, 92 52, 82 36 C 76 26, 86 18, 84 10', 1, 'none', 1, 'opacity=".6"')}${pen('M104 70 C 96 56, 114 46, 104 30 C 99 22, 107 16, 105 8', 1, 'none', 1, 'opacity=".6"')}${pen('M124 74 C 116 62, 132 54, 124 40', 1, 'none', 1, 'opacity=".6"')}</g>`;
+  }
+  function drawPlant() {
+    const r = rng(9); let leaves = '';
+    const stems = [[100, 218, 44, 118], [100, 218, 72, 58], [100, 218, 112, 22], [100, 218, 150, 70], [100, 218, 172, 140], [96, 220, 34, 196], [104, 220, 168, 236]];
+    for (const [x1, y1, x2, y2] of stems) {
+      const cx = (x1 + x2) / 2 + (r() - .5) * 40, cy = (y1 + y2) / 2 - 10;
+      leaves += pen(`M${x1} ${y1} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2} ${y2}`, 1);
+      const ang = Math.atan2(y2 - cy, x2 - cx) * 180 / Math.PI;
+      leaves += leaf(x2, y2, ang + (r() - .5) * 40, 30 + r() * 10, '#A9B7A6', .55);
+      const mx = (x1 + 2 * cx + x2) / 4, my = (y1 + 2 * cy + y2) / 4;
+      leaves += leaf(mx, my, ang + (r() < .5 ? -70 : 70), 22 + r() * 8, '#A9B7A6', .45);
+    }
+    // a trailing vine over the rim
+    leaves += pen('M60 222 C 40 236, 30 262, 34 292', 1) + leaf(34, 292, 100, 22, '#A9B7A6', .5) + leaf(40, 256, 160, 18, '#A9B7A6', .45);
+    $('#plantSvg').innerHTML = `
+      <defs>${rough('roughP')}<filter id="blurP" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+      <ellipse cx="104" cy="309" rx="56" ry="6" fill="#5a4636" opacity=".22" filter="url(#blurP)"/>
+      <g filter="url(#roughP)">
+        ${leaves}
+        ${pen('M56 232 L 144 232 L 134 304 C 120 310, 80 310, 66 304 Z', 1.5, '#DCC7AD')}
+        ${pen('M50 218 L 150 218 L 150 234 L 50 234 Z', 1.4, '#E6D5BF')}
+        ${pen('M126 242 l -3 54 M133 240 l -3 48 M139 238 l -3 36', .7)}
+      </g>`;
+  }
+  function drawGround() {
+    const r = rng(5), L = [];
+    inkLine(r, L, 40, 468, 520, 462, .9, .22);
+    inkLine(r, L, 600, 461, 980, 458, .9, .18);
+    $('#groundSvg').innerHTML = `<g fill="none" stroke="#3a332c" stroke-linecap="round" vector-effect="non-scaling-stroke">${L.join('')}</g>`;
+  }
+  function drawLight() {
+    const r = rng(23);
+    const A = [470, 522], B = [790, 478], C = [995, 604], D = [650, 640];
+    const lerp = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t];
+    let lattice = '';
+    for (const t of [.34, .67]) { const p = lerp(A, D, t), q = lerp(B, C, t); lattice += `<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}"/>`; }
+    for (const s of [.25, .5, .75]) { const p = lerp(A, B, s), q = lerp(D, C, s); lattice += `<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}"/>`; }
+    let motes = '';
+    for (let i = 0; i < 34; i++) {
+      const t = r(), u = r();
+      const x = 150 + t * 700 + (u - .5) * 220, y = 60 + t * 520 + (u - .5) * 120;
+      motes += `<circle class="mote" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(0.8 + r() * 1.9).toFixed(2)}" style="animation-delay:${(-r() * 9).toFixed(2)}s;animation-duration:${(7 + r() * 7).toFixed(1)}s"/>`;
+    }
+    $('#lightSvg').innerHTML = `
+      <defs>
+        <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF8EA" stop-opacity=".95"/><stop offset=".5" stop-color="#FFF8EA" stop-opacity=".42"/><stop offset="1" stop-color="#FFF8EA" stop-opacity="0"/></linearGradient>
+        <filter id="b20" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="20"/></filter>
+        <filter id="b8" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter>
+        <filter id="b3" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5"/></filter>
+      </defs>
+      <g filter="url(#b20)" opacity=".62">
+        <polygon points="150,40 430,26 1000,470 1000,640 560,640 110,420" fill="url(#beam)"/>
+      </g>
+      <g filter="url(#b8)" opacity=".38">
+        <polygon points="250,60 296,52 930,600 850,624" fill="url(#beam)"/>
+        <polygon points="360,46 392,42 990,520 960,560" fill="url(#beam)"/>
+        <polygon points="170,210 196,200 720,640 660,640" fill="url(#beam)"/>
+      </g>
+      <g filter="url(#b8)" opacity=".55"><polygon points="${[A, B, C, D].map(p => p.join(',')).join(' ')}" fill="#FFF8EA"/></g>
+      <g filter="url(#b3)" stroke="#5a4a3a" stroke-opacity=".09" stroke-width="7">${lattice}</g>
+      <g>${motes}</g>`;
+  }
+
+  /* ---------------- rendering ---------------- */
+  function renderTexts() {
+    for (const el of $$('[data-text]')) {
+      if (ui.editing && document.activeElement === el) continue;
+      const v = state.texts[el.dataset.text];
+      el.textContent = v == null ? '' : v;
+    }
+  }
+  function renderImages() {
+    for (const img of $$('img[data-img]')) {
+      const u = state.images[img.dataset.img];
+      const ph = img.closest('.ph');
+      if (okUrl(u)) { if (img.getAttribute('src') !== u) img.src = u; img.hidden = false; if (ph) ph.querySelector('.empty')?.remove(); }
+      else { img.removeAttribute('src'); img.hidden = true; if (ph && !ph.querySelector('.empty')) ph.append(emptyArt()); }
+    }
+    const pot = state.images['home.pot'];
+    $('.pot').style.setProperty('--pot-mask', okUrl(pot) ? `url("${pot.replace(/"/g, '%22')}")` : 'none');
+  }
+  const ITEM_NAMES = {
+    'home.window': '窗 Window', 'home.plant': '盆栽 Potted plant', 'home.coffee': '咖啡 Coffee', 'home.pot': '陶器照片 Pottery photo', 'home.light': '光 Light',
+    'home.caption': '作品标签 Piece label', 'home.title': '标题 Title', 'home.note': '短句 Short line', 'home.idx.pottery': '手作陶器入口 Pottery link',
+    'home.idx.handwritten': '手写小物入口 Handwritten link', 'top.avatar': '头像 About photo', 'pottery.head': '陶器标题 Pottery title', 'pottery.intro': '陶器介绍 Pottery intro',
+    'handwritten.head': '手写标题 Handwritten title', 'handwritten.intro': '手写介绍 Handwritten intro', 'about.who': '照片与名字 Photo & name', 'about.bios': '自我介绍 Bio' };
+  function deleteItem(key) {
+    state.removed[key] = true; applyLayout(); addMoveControls(); markDirty();
+    setStatus('已删除，可在「样式」面板恢复。Deleted. Restore it from the Style panel.');
+    if (!$('#stylePanel').hidden) renderRemoved();
+  }
+  function renderRemoved() {
+    const box = $('#removedRows'); box.textContent = '';
+    const keys = Object.keys(state.removed).filter(k => state.removed[k]);
+    if (!keys.length) { box.append(h('p', { class: 'hex' }, '没有删除的项目。Nothing deleted.')); return; }
+    for (const k of keys) box.append(h('div', { class: 'crow custom' }, h('span', { text: ITEM_NAMES[k] || k }), h('span'),
+      h('button', { class: 'ebtn', type: 'button', onclick: () => { delete state.removed[k]; applyLayout(); if (ui.editing) addMoveControls(); markDirty(); renderRemoved(); } }, '恢复 Restore')));
+  }
+  function applyLayout() {
+    for (const el of $$('[data-move]')) {
+      el.hidden = !!state.removed[el.dataset.move];
+      const L = state.layout[el.dataset.move] || {};
+      el.style.setProperty('--dx', (L.x || 0) + 'cqw');
+      el.style.setProperty('--dy', (L.y || 0) + 'cqw');
+      el.style.setProperty('--sc', L.s || 1);
+    }
+  }
+  function emptyArt() {
+    const d = document.createElement('div');
+    d.className = 'empty';
+    d.innerHTML = `<svg viewBox="0 0 120 80" fill="none" stroke="#6C635A" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+        <path d="M14 30 C 16 58, 40 70, 60 70 C 82 70, 104 58, 106 30"/>
+        <path d="M10 29 C 40 24, 80 24, 110 29" opacity=".7"/>
+        <path d="M46 70 C 46 76, 74 76, 74 70" opacity=".6"/></svg>
+      <span class="mono">照片待补 · photo to come</span>`;
+    return d;
+  }
+
+  function h(tag, attrs, ...kids) {
+    const el = document.createElement(tag);
+    if (attrs) for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === 'class') el.className = v;
+      else if (k === 'text') el.textContent = v;
+      else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    }
+    for (const k of kids.flat()) if (k != null && k !== false) el.append(k);
+    return el;
+  }
+  function photoEl(u, alt) {
+    const ph = h('div', { class: 'ph' });
+    if (okUrl(u)) ph.append(h('img', { src: u, alt: alt || '', loading: 'lazy' })); else ph.append(emptyArt());
+    return ph;
+  }
+  const tagsOf = (cat) => { const s = new Set(); state.products[cat].forEach(p => (p.tags || []).forEach(t => s.add(t))); return [...s]; };
+  function matches(p, f) {
+    if (!f) return true;
+    if (f.type === 'tag') return (p.tags || []).includes(f.v);
+    if (f.type === 'av') return p.availability === f.v;
+    return true;
+  }
+  function renderFilters(cat) {
+    const box = $('#filters-' + cat); box.textContent = '';
+    const f = ui.filter[cat];
+    const chip = (label, val, cls) => h('button', { class: 'chip ' + (cls || ''), type: 'button', 'aria-pressed': String(!!(f ? (val && f.type === val.type && f.v === val.v) : !val)), onclick: () => { ui.filter[cat] = val; ui.open[cat] = null; renderCat(cat); } }, label);
+    box.append(h('span', { class: 'mono lab' }, '筛选 Filter'));
+    box.append(chip('全部 All', null));
+    for (const t of tagsOf(cat)) box.append(chip(t, { type: 'tag', v: t }));
+    for (const [k, [zh, en]] of Object.entries(AV)) if (state.products[cat].some(p => p.availability === k)) box.append(chip(`${zh} ${en}`, { type: 'av', v: k }, 'av'));
+  }
+  function renderCat(cat) {
+    renderFilters(cat);
+    const grid = $('#grid-' + cat); grid.textContent = '';
+    const list = state.products[cat].filter(p => matches(p, ui.filter[cat]));
+    if (!list.length && !ui.editing) grid.append(h('p', { class: 'empty-grid' }, '这里暂时还没有作品。Nothing here yet.'));
+    for (const p of list) grid.append(card(cat, p));
+    if (ui.editing) grid.append(h('button', { class: 'add-card', type: 'button', onclick: () => addPiece(cat) }, '+ 新增作品\nAdd a piece'));
+  }
+  function card(cat, p) {
+    const open = ui.open[cat] === p.id;
+    const el = h('article', { class: 'card' + (open ? ' open' : ''), 'data-id': p.id });
+    const ph = photoEl((p.photos || [])[0], p.name);
+    if (p.availability && p.availability !== 'available') ph.append(h('span', { class: 'badge ' + p.availability }, AV[p.availability] ? AV[p.availability][1] : ''));
+    const nameEl = h('h3', { text: p.name || '' }), lineEl = h('p', { class: 'line', text: p.line || '' });
+    el.append(h('button', { class: 'thumb', type: 'button', 'aria-expanded': String(open), onclick: () => { ui.open[cat] = p.id; ui.confirmDel = null; renderCat(cat); scrollToCard(cat, p.id); } }, ph, nameEl, lineEl));
+    if (ui.editing && !open) {
+      const del = h('button', { class: 'ebtn danger card-del', type: 'button', onclick: () => {
+        if (del.dataset.armed !== '1') { del.dataset.armed = '1'; del.textContent = '确定删除？Confirm delete'; return; }
+        const list = state.products[cat]; list.splice(list.indexOf(p), 1); markDirty(); renderCat(cat);
+      } }, '删除 Delete');
+      el.append(del);
+    }
+    if (open) el.append(ui.editing ? detailEdit(cat, p) : detailView(cat, p));
+    return el;
+  }
+  function scrollToCard(cat, id) {
+    requestAnimationFrame(() => {
+      const el = $(`#grid-${cat} [data-id="${CSS.escape(id)}"]`);
+      if (el) el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
+  function gallery(cat, p, editable) {
+    const photos = (p.photos || []).filter(okUrl);
+    let idx = Math.min(ui.mainPhoto[p.id] || 0, Math.max(0, photos.length - 1));
+    const main = h('div', { class: 'ph main' });
+    if (photos.length) main.append(h('img', { src: photos[idx], alt: p.name || '' })); else main.append(emptyArt());
+    const strip = h('div', { class: 'strip' });
+    photos.forEach((u, i) => {
+      const t = h('button', { class: 't', type: 'button', 'aria-label': `Photo ${i + 1}`, 'aria-current': String(i === idx), onclick: () => { ui.mainPhoto[p.id] = i; renderCat(cat); } }, h('img', { src: u, alt: '' }));
+      if (editable) t.append(h('span', { class: 'x', role: 'button', tabindex: '0', 'aria-label': 'Remove photo', onclick: (e) => { e.stopPropagation(); p.photos.splice(p.photos.indexOf(u), 1); ui.mainPhoto[p.id] = 0; markDirty(); renderCat(cat); } }, '×'));
+      strip.append(t);
+    });
+    const g = h('div', { class: 'gallery' }, main, photos.length > 1 || editable ? strip : null);
+    if (editable) {
+      const row = h('div', { class: 'row form' },
+        h('button', { class: 'ebtn', type: 'button', onclick: () => pickMany(cat, p) }, '+ 添加照片 Add photos'),
+        photos.length > 1 && idx > 0 ? h('button', { class: 'ebtn', type: 'button', onclick: () => { const u = p.photos.splice(p.photos.indexOf(photos[idx]), 1)[0]; p.photos.unshift(u); ui.mainPhoto[p.id] = 0; markDirty(); renderCat(cat); } }, '设为封面 Use as cover') : null);
+      g.append(row);
+      if (!assetsNS) g.append(h('p', { class: 'hint' }, '这里无法上传照片。Photo upload isn’t available in this view.'));
+    }
+    return g;
+  }
+  function detailView(cat, p) {
+    const av = AV[p.availability] || AV.available;
+    const tags = h('div', { class: 'tags' }, (p.tags || []).map(t => h('button', { class: 'chip', type: 'button', onclick: () => { ui.filter[cat] = { type: 'tag', v: t }; ui.open[cat] = null; renderCat(cat); } }, t)));
+    return h('div', { class: 'detail' },
+      gallery(cat, p, false),
+      h('div', { class: 'info' },
+        h('h3', { text: p.name || '' }),
+        p.line ? h('p', { class: 'line', text: p.line }) : null,
+        h('dl', { class: 'specs' },
+          h('dt', null, '价格 Price'), h('dd', { text: p.price || '—' }),
+          h('dt', null, '尺寸 Size'), h('dd', { text: p.size || '—' }),
+          h('dt', null, '状态 Status'), h('dd', null, h('span', { class: 'avail ' + (p.availability || 'available') }, h('i'), `${av[0]} ${av[1]}`)),
+          (p.tags || []).length ? h('dt', null, '标签 Tags') : null, (p.tags || []).length ? h('dd', null, tags) : null),
+        p.details ? h('p', { class: 'desc', text: p.details }) : null,
+        orderBtn(p),
+        h('button', { class: 'close', type: 'button', onclick: () => { ui.open[cat] = null; renderCat(cat); scrollToCard(cat, p.id); } }, '收起 Close')));
+  }
+  function orderBtn(p) {
+    if (p.availability === 'sold') return h('p', { class: 'soldnote', text: '已售出 Sold out' });
+    const u = ORDER_FORM + (ORDER_FORM.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(p.name || '') + '&price=' + encodeURIComponent(p.price || '');
+    return h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, p.availability === 'order' ? '预订 Order (made to order)' : '下单 Order this piece');
+  }
+  function detailEdit(cat, p) {
+    const id = (f) => `f-${p.id}-${f}`;
+    const field = (label, f, opts = {}) => {
+      const input = opts.area ? h('textarea', { id: id(f) }) : h('input', { id: id(f), type: 'text', placeholder: opts.ph || '' });
+      input.value = f === 'tags' ? (p.tags || []).join(', ') : (p[f] || '');
+      input.addEventListener('input', () => {
+        if (f === 'tags') p.tags = input.value.split(/[,，]/).map(s => s.trim()).filter(Boolean); else p[f] = input.value;
+        markDirty();
+      });
+      if (f === 'tags') input.addEventListener('change', () => renderFilters(cat));
+      return h('label', { for: id(f) }, label, input);
+    };
+    const sel = h('select', { id: id('availability') }, Object.entries(AV).map(([k, [zh, en]]) => { const o = h('option', { value: k }, `${zh} ${en}`); if (p.availability === k) o.selected = true; return o; }));
+    sel.addEventListener('change', () => { p.availability = sel.value; markDirty(); renderFilters(cat); });
+    const list = state.products[cat], i = list.indexOf(p);
+    const del = h('button', { class: 'ebtn danger', type: 'button', onclick: () => {
+      if (ui.confirmDel !== p.id) { ui.confirmDel = p.id; del.textContent = '确定删除？Confirm delete'; return; }
+      list.splice(list.indexOf(p), 1); ui.open[cat] = null; ui.confirmDel = null; markDirty(); renderCat(cat);
+    } }, '删除作品 Delete piece');
+    return h('div', { class: 'detail' },
+      gallery(cat, p, true),
+      h('div', { class: 'info form' },
+        field('名称 Name', 'name'),
+        field('一句话描述 One-line description', 'line'),
+        field('价格 Price', 'price', { ph: 'RM 45' }),
+        field('尺寸 Size', 'size', { ph: 'Ø 9 cm · H 4 cm' }),
+        h('label', { for: id('availability') }, '状态 Availability', sel),
+        field('标签 Tags (用逗号分开 separate with commas)', 'tags', { ph: '小碟 Dish, 梅 Plum' }),
+        field('详细说明 Details', 'details', { area: true }),
+        h('div', { class: 'row' },
+          h('button', { class: 'ebtn', type: 'button', disabled: i <= 0, onclick: () => { list.splice(i, 1); list.splice(i - 1, 0, p); markDirty(); renderCat(cat); } }, '← 前移 Earlier'),
+          h('button', { class: 'ebtn', type: 'button', disabled: i >= list.length - 1, onclick: () => { list.splice(i, 1); list.splice(i + 1, 0, p); markDirty(); renderCat(cat); } }, '后移 Later →'),
+          del),
+        h('button', { class: 'close', type: 'button', onclick: () => { ui.open[cat] = null; renderCat(cat); scrollToCard(cat, p.id); } }, '完成 Done')));
+  }
+  function addPiece(cat) {
+    const p = { id: 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), name: '新作品', line: '一句话描述 One-line description', price: '', size: '', availability: 'available', tags: [], details: '', photos: [] };
+    state.products[cat].push(p); ui.filter[cat] = null; ui.open[cat] = p.id; markDirty(); renderCat(cat); scrollToCard(cat, p.id);
+  }
+
+  function renderAll() {
+    applyTheme(); renderTexts(); applyTextStyles(); renderImages(); applyLayout();
+    CATS.forEach(renderCat);
+  }
+
+  /* ---------------- routing ---------------- */
+  function route() {
+    let pg = (location.hash || '').replace('#', '');
+    if (!PAGES.includes(pg)) pg = 'home';
+    for (const m of $$('[data-page]')) m.hidden = m.dataset.page !== pg;
+    for (const a of $$('[data-nav]')) { if (a.dataset.nav === pg) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }
+    if (ui.editing) addMoveControls();
+  }
+  addEventListener('hashchange', () => { route(); scrollTo(0, 0); });
+
+  /* ---------------- edit mode ---------------- */
+  function setStatus(t) { $('#status').textContent = t; }
+  function markDirty() {
+    ui.dirty = true; setStatus('有未保存的修改 Unsaved changes');
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ base: state.savedAt || '', at: Date.now(), state })); } catch (e) {}
+  }
+  function clearDraft() { try { localStorage.removeItem(DRAFT_KEY); } catch (e) {} }
+
+  function setEditing(on) {
+    ui.editing = on;
+    document.body.classList.toggle('editing', on);
+    $('#editBtn').textContent = on ? '完成 Done' : '编辑 Edit';
+    for (const el of $$('[data-text]')) {
+      if (on) { try { el.contentEditable = 'plaintext-only'; } catch (e) { el.contentEditable = 'true'; } if (el.contentEditable !== 'plaintext-only') el.contentEditable = 'true'; el.spellcheck = false; }
+      else el.removeAttribute('contenteditable');
+    }
+    if (on) addMoveControls(); else { $$('.mv-ctl').forEach(c => c.remove()); $('#stylePanel').hidden = true; closeTextPanel(); }
+    CATS.forEach(renderCat);
+    if (!on && !ui.dirty) setStatus('');
+  }
+  document.addEventListener('input', (e) => {
+    const el = e.target.closest && e.target.closest('[data-text]');
+    if (!el || !ui.editing) return;
+    state.texts[el.dataset.text] = el.innerText.replace(/\n$/, '');
+    markDirty();
+  });
+  document.addEventListener('click', (e) => {
+    if (ui.editing && e.target.closest('[data-text]') && e.target.closest('a')) e.preventDefault();
+  });
+  document.addEventListener('keydown', (e) => {
+    const el = e.target.closest && e.target.closest('[data-text]');
+    if (el && ui.editing && e.key === 'Enter' && el.tagName !== 'P') e.preventDefault();
+  });
+
+  function addMoveControls() {
+    $$('.mv-ctl').forEach(c => c.remove());
+    for (const el of $$('[data-move]')) {
+      if (el.closest('[hidden]')) continue;
+      if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+      const key = el.dataset.move;
+      const ctl = h('div', { class: 'mv-ctl', contenteditable: 'false' },
+        h('button', { class: 'mv-handle', type: 'button', title: '拖动 Drag to move', 'aria-label': 'Drag to move' }, '⠿', h('span', { class: 'lbl' }, ' 移动 Move')),
+        h('button', { type: 'button', title: '缩小 Smaller', 'aria-label': 'Smaller', onclick: () => nudgeScale(key, -0.06) }, '−'),
+        h('button', { type: 'button', title: '放大 Larger', 'aria-label': 'Larger', onclick: () => nudgeScale(key, 0.06) }, '+'),
+        h('button', { type: 'button', title: '复原 Reset', 'aria-label': 'Reset position', onclick: () => { delete state.layout[key]; applyLayout(); markDirty(); } }, '↺', h('span', { class: 'lbl' }, ' 复原 Reset')),
+        h('button', { type: 'button', class: 'mv-del', title: '删除 Delete', 'aria-label': 'Delete', onclick: () => deleteItem(key) }, '✕', h('span', { class: 'lbl' }, ' 删除 Delete')));
+      ctl.querySelector('.mv-handle').addEventListener('pointerdown', (e) => startDrag(e, el, key));
+      el.append(ctl);
+    }
+  }
+  function nudgeScale(key, d) {
+    const L = state.layout[key] = state.layout[key] || {};
+    L.s = Math.round(Math.min(3, Math.max(.3, (L.s || 1) + d)) * 100) / 100;
+    applyLayout(); markDirty();
+  }
+  function startDrag(e, el, key) {
+    e.preventDefault();
+    const handle = e.currentTarget; handle.setPointerCapture(e.pointerId);
+    const box = el.parentElement.closest('.cq') || document.body;
+    const w = box.clientWidth || innerWidth;
+    const L = state.layout[key] = state.layout[key] || {};
+    const sx = e.clientX, sy = e.clientY, x0 = L.x || 0, y0 = L.y || 0;
+    const move = (ev) => {
+      L.x = Math.round((x0 + (ev.clientX - sx) / w * 100) * 100) / 100;
+      L.y = Math.round((y0 + (ev.clientY - sy) / w * 100) * 100) / 100;
+      el.style.setProperty('--dx', L.x + 'cqw'); el.style.setProperty('--dy', L.y + 'cqw');
+    };
+    const up = () => { handle.removeEventListener('pointermove', move); handle.removeEventListener('pointerup', up); handle.removeEventListener('pointercancel', up); markDirty(); };
+    handle.addEventListener('pointermove', move); handle.addEventListener('pointerup', up); handle.addEventListener('pointercancel', up);
+  }
+
+  /* ---------------- photos ---------------- */
+  async function upload(file) {
+    if (!assetsNS) throw { code: 'unavailable' };
+    setStatus('上传中 Uploading…');
+    const r = await assetsNS.upload(file);
+    return r.url;
+  }
+  function uploadError(e) {
+    const c = e && e.code;
+    setStatus(c === 'too_large' ? '照片太大（上限 20 MB）Photo is too large (20 MB max).'
+      : c === 'unsupported_type' ? '请选择图片文件。Please choose an image file.'
+      : c === 'unavailable' || c === 'not_granted' || c === 'capability_disabled' ? '这里无法上传照片。Photo upload isn’t available in this view.'
+      : '上传失败，请再试一次。Upload failed. Please try again.');
+  }
+  $$('[data-for]').forEach(b => b.addEventListener('click', () => { ui.pickTarget = b.dataset.for; $('#filePick').value = ''; $('#filePick').click(); }));
+  $('#filePick').addEventListener('change', async (e) => {
+    const f = e.target.files && e.target.files[0]; if (!f || !ui.pickTarget) return;
+    try { const url = await upload(f); state.images[ui.pickTarget] = url; renderImages(); markDirty(); }
+    catch (err) { uploadError(err); }
+  });
+  let manyTarget = null;
+  function pickMany(cat, p) { manyTarget = { cat, p }; $('#filePickMulti').value = ''; $('#filePickMulti').click(); }
+  $('#filePickMulti').addEventListener('change', async (e) => {
+    const files = Array.from(e.target.files || []); if (!files.length || !manyTarget) return;
+    const { cat, p } = manyTarget;
+    try {
+      for (const f of files) { const url = await upload(f); (p.photos = p.photos || []).push(url); }
+      markDirty(); renderCat(cat);
+    } catch (err) { uploadError(err); if (files.length) renderCat(cat); }
+  });
+
+  /* ---------------- save ---------------- */
+  async function save() {
+    if (!artifactNS) { setStatus('这里无法保存。Saving isn’t available in this view.'); return; }
+    const btn = $('#saveBtn'); btn.disabled = true;
+    setStatus('保存中 Saving…');
+    const next = clone(state); next.savedAt = new Date().toISOString();
+    try {
+      await artifactNS.publish({ 'data/site.json': JSON.stringify(next, null, 1) });
+      state.savedAt = next.savedAt; ui.dirty = false; clearDraft();
+      setStatus('已保存 Saved');
+    } catch (e) {
+      const c = e && e.code;
+      setStatus(c === 'conflict' ? '页面有更新的版本，正在重新载入；你的修改已存为草稿。A newer version exists; reloading. Your edits are kept as a draft.'
+        : c === 'not_writer' || c === 'not_granted' ? '你没有修改这个页面的权限。You don’t have permission to edit this page.'
+        : c === 'capability_disabled' ? '这里无法保存，修改仍保留在本页。Saving isn’t available here; your edits stay on this page.'
+        : c === 'rate_limited' ? '保存太频繁，请稍后再试。Saving too often. Try again in a moment.'
+        : c === 'too_large' ? '内容太大，无法保存。The page data is too large to save.'
+        : '保存失败，请再试一次。Save failed. Please try again.');
+    } finally { btn.disabled = false; }
+  }
+  $('#saveBtn').addEventListener('click', save);
+  $('#editBtn').addEventListener('click', () => setEditing(!ui.editing));
+  addEventListener('beforeunload', (e) => { if (ui.dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+  function checkDraft() {
+    let d = null;
+    try { d = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null'); } catch (e) {}
+    if (!d || !d.state) return;
+    if (JSON.stringify(d.state) === JSON.stringify(state)) { clearDraft(); return; }
+    const n = $('#draftNotice'); n.hidden = false;
+    $('#draftRestore').onclick = () => { state = merge(DEFAULTS, d.state); n.hidden = true; renderAll(); setEditing(true); markDirty(); };
+    $('#draftDiscard').onclick = () => { clearDraft(); n.hidden = true; };
+  }
+
+  /* ---------------- style: colours, fonts, text ---------------- */
+  const fontStack = (n) => `"${n}","Noto Serif SC","Songti SC",serif`;
+  function hexA(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
+  function applyTheme() {
+    const t = state.theme, root = document.documentElement.style;
+    for (const [k, v] of COLOR_TOKENS) root.setProperty(v, t.colors[k]);
+    root.setProperty('--hair', hexA(t.colors.ink, .16));
+    root.setProperty('--glaze-soft', hexA(t.colors.accent, .14));
+    for (const c of t.custom) root.setProperty('--c-' + c.id, c.value);
+    for (const [k, v] of FONT_ROLES) root.setProperty(v, fontStack(t.fonts[k]));
+    root.setProperty('--title-scale', t.titleScale || 1);
+  }
+  const okColor = (c) => typeof c === 'string' && (HEX.test(c) || /^var\(--[\w-]+\)$/.test(c));
+  function applyTextStyles() {
+    for (const el of $$('[data-text]')) {
+      const st = state.textStyle[el.dataset.text] || {};
+      el.style.fontFamily = FONT_NAMES.includes(st.font) ? fontStack(st.font) : '';
+      el.style.fontSize = st.size >= 6 && st.size <= 240 ? st.size + 'px' : '';
+      el.style.fontWeight = ['300', '400', '500', '700'].includes(String(st.weight)) ? st.weight : '';
+      el.style.color = okColor(st.color) ? st.color : '';
+      el.style.letterSpacing = typeof st.ls === 'number' ? st.ls + 'em' : '';
+      el.style.lineHeight = typeof st.lh === 'number' ? String(st.lh) : '';
+      el.style.fontStyle = st.italic ? 'italic' : '';
+      el.style.textDecoration = st.underline ? 'underline' : '';
+      el.style.textAlign = ['left', 'center', 'right'].includes(st.align) ? st.align : '';
+    }
+  }
+  function colorChoices() {
+    return [...COLOR_TOKENS.map(([k, v, label]) => ({ val: `var(${v})`, label, hex: state.theme.colors[k] })),
+      ...state.theme.custom.map(c => ({ val: `var(--c-${c.id})`, label: c.name || c.value, hex: c.value }))];
+  }
+  function renderStylePanel() {
+    const t = state.theme;
+    const rows = $('#colorRows'); rows.textContent = '';
+    for (const [k, , label] of COLOR_TOKENS) {
+      const inp = h('input', { type: 'color', id: 'col-' + k, value: t.colors[k], 'aria-label': label });
+      const hex = h('span', { class: 'hex', text: t.colors[k] });
+      inp.addEventListener('input', () => { t.colors[k] = inp.value; hex.textContent = inp.value; applyTheme(); markDirty(); });
+      rows.append(h('label', { class: 'crow', for: 'col-' + k }, label, inp, hex));
+    }
+    const cr = $('#customRows'); cr.textContent = '';
+    if (!t.custom.length) cr.append(h('p', { class: 'hex' }, '还没有自定义颜色。可用于文字颜色。No colours yet; use them for text colour.'));
+    for (const c of t.custom) {
+      const name = h('input', { type: 'text', id: 'cn-' + c.id, value: c.name, placeholder: '名称 Name', 'aria-label': 'Colour name' });
+      const inp = h('input', { type: 'color', id: 'cc-' + c.id, value: c.value, 'aria-label': 'Colour' });
+      const del = h('button', { class: 'ebtn', type: 'button', 'aria-label': 'Remove colour' }, '删除');
+      name.addEventListener('input', () => { c.name = name.value.slice(0, 40); markDirty(); });
+      inp.addEventListener('input', () => { c.value = inp.value; applyTheme(); markDirty(); });
+      del.addEventListener('click', () => { t.custom.splice(t.custom.indexOf(c), 1); markDirty(); renderStylePanel(); });
+      cr.append(h('div', { class: 'crow custom' }, name, inp, del));
+    }
+    const fr = $('#fontRows'); fr.textContent = '';
+    for (const [k, , label] of FONT_ROLES) {
+      const sel = h('select', { id: 'font-' + k }, FONTS.map(([n, l]) => { const o = h('option', { value: n }, l); if (t.fonts[k] === n) o.selected = true; return o; }));
+      sel.addEventListener('change', () => { t.fonts[k] = sel.value; applyTheme(); markDirty(); });
+      fr.append(h('label', { for: 'font-' + k }, label, sel));
+    }
+    renderRemoved();
+    const ts = $('#titleScale'); ts.value = t.titleScale || 1; $('#titleScaleVal').textContent = Math.round((t.titleScale || 1) * 100) + '%';
+  }
+  $('#titleScale').addEventListener('input', (e) => { state.theme.titleScale = Number(e.target.value); $('#titleScaleVal').textContent = Math.round(state.theme.titleScale * 100) + '%'; applyTheme(); markDirty(); });
+  $('#addColor').addEventListener('click', () => { state.theme.custom.push({ id: 'c' + Date.now().toString(36), name: '', value: '#A9C49A' }); markDirty(); renderStylePanel(); });
+  $('#themeReset').addEventListener('click', (e) => {
+    const b = e.currentTarget;
+    if (b.dataset.armed !== '1') { b.dataset.armed = '1'; b.textContent = '确定复原？Confirm reset'; return; }
+    b.dataset.armed = ''; b.textContent = '复原原本样式 Reset to original';
+    state.theme = clone(BASE_THEME); state.textStyle = {}; applyTheme(); applyTextStyles(); markDirty(); renderStylePanel(); if (ui.textKey) fillTextPanel();
+  });
+  $('#styleBtn').addEventListener('click', () => { const p = $('#stylePanel'); p.hidden = !p.hidden; if (!p.hidden) renderStylePanel(); });
+  $('#styleClose').addEventListener('click', () => { $('#stylePanel').hidden = true; });
+
+  // per-text styling: focus any text in edit mode, then style it here
+  function curStyle() { return state.textStyle[ui.textKey] = state.textStyle[ui.textKey] || {}; }
+  function textEls() { return $$(`[data-text="${CSS.escape(ui.textKey)}"]`); }
+  function closeTextPanel() { $('#textPanel').hidden = true; $$('.tp-active').forEach(e => e.classList.remove('tp-active')); ui.textKey = null; }
+  function fillTextPanel() {
+    const st = state.textStyle[ui.textKey] || {}, el = textEls()[0]; if (!el) return;
+    const cs = getComputedStyle(el);
+    $('#tpTarget').textContent = '「' + (el.innerText || '').trim().slice(0, 14) + ((el.innerText || '').trim().length > 14 ? '…' : '') + '」';
+    const fsel = $('#tpFont'); fsel.value = st.font || '';
+    $('#tpSize').value = st.size || ''; $('#tpSize').placeholder = Math.round(parseFloat(cs.fontSize));
+    $('#tpWeight').value = st.weight ? String(st.weight) : '';
+    $('#tpAlign').value = st.align || '';
+    const fs = parseFloat(cs.fontSize) || 16;
+    $('#tpLs').value = typeof st.ls === 'number' ? st.ls : ((parseFloat(cs.letterSpacing) || 0) / fs).toFixed(2);
+    $('#tpLh').value = typeof st.lh === 'number' ? st.lh : ((parseFloat(cs.lineHeight) || fs * 1.6) / fs).toFixed(2);
+    $('#tpLsVal').textContent = Number($('#tpLs').value).toFixed(2) + 'em'; $('#tpLhVal').textContent = Number($('#tpLh').value).toFixed(2);
+    $('#tpItalic').setAttribute('aria-pressed', String(!!st.italic)); $('#tpUnderline').setAttribute('aria-pressed', String(!!st.underline));
+    const sw = $('#tpSwatches'); sw.textContent = '';
+    sw.append(h('button', { class: 'sw none', type: 'button', title: '默认 Default', 'aria-label': 'Default colour', 'aria-pressed': String(!st.color), onclick: () => setTS('color', null) }, '×'));
+    for (const c of colorChoices()) sw.append(h('button', { class: 'sw', type: 'button', title: c.label, 'aria-label': c.label, style: `background:${c.hex}`, 'aria-pressed': String(st.color === c.val), onclick: () => setTS('color', c.val) }));
+    $('#tpColor').value = HEX.test(st.color || '') ? st.color : (state.theme.colors.ink);
+  }
+  function setTS(k, v) {
+    const st = curStyle();
+    if (v === null || v === '' || v === undefined) delete st[k]; else st[k] = v;
+    if (!Object.keys(st).length) delete state.textStyle[ui.textKey];
+    applyTextStyles(); markDirty(); fillTextPanel();
+  }
+  $('#tpFont').append(h('option', { value: '' }, '默认 Default'), ...FONTS.map(([n, l]) => h('option', { value: n }, l)));
+  $('#tpFont').addEventListener('change', (e) => setTS('font', e.target.value));
+  $('#tpSize').addEventListener('change', (e) => { const n = Number(e.target.value); setTS('size', n >= 6 && n <= 240 ? n : null); });
+  $('#tpWeight').addEventListener('change', (e) => setTS('weight', e.target.value));
+  $('#tpAlign').addEventListener('change', (e) => setTS('align', e.target.value));
+  $('#tpLs').addEventListener('input', (e) => { curStyle().ls = Number(e.target.value); $('#tpLsVal').textContent = Number(e.target.value).toFixed(2) + 'em'; applyTextStyles(); markDirty(); });
+  $('#tpLh').addEventListener('input', (e) => { curStyle().lh = Number(e.target.value); $('#tpLhVal').textContent = Number(e.target.value).toFixed(2); applyTextStyles(); markDirty(); });
+  $('#tpItalic').addEventListener('click', () => setTS('italic', !(state.textStyle[ui.textKey] || {}).italic || null));
+  $('#tpUnderline').addEventListener('click', () => setTS('underline', !(state.textStyle[ui.textKey] || {}).underline || null));
+  $('#tpColor').addEventListener('input', (e) => { curStyle().color = e.target.value; applyTextStyles(); markDirty(); });
+  $('#tpColor').addEventListener('change', () => fillTextPanel());
+  $('#tpClear').addEventListener('click', () => { delete state.textStyle[ui.textKey]; applyTextStyles(); markDirty(); fillTextPanel(); });
+  $('#tpClose').addEventListener('click', closeTextPanel);
+  document.addEventListener('focusin', (e) => {
+    const el = e.target.closest && e.target.closest('[data-text]');
+    if (!el || !ui.editing) return;
+    $$('.tp-active').forEach(x => x.classList.remove('tp-active'));
+    ui.textKey = el.dataset.text;
+    textEls().forEach(x => x.classList.add('tp-active'));
+    $('#textPanel').hidden = false; fillTextPanel();
+  });
+
+  /* ---------------- boot ---------------- */
+  async function initCaps() {
+    if (!window.claude || typeof window.claude.use !== 'function') return;
+    const [art, as, usr] = await Promise.all([
+      window.claude.use('artifact').catch(() => null),
+      window.claude.use('assets').catch(() => null),
+      window.claude.use('user').catch(() => null),
+    ]);
+    artifactNS = art; assetsNS = as;
+    if (!art) return;
+    let can = false;
+    try { can = usr ? await usr.canEdit() : false; } catch (e) { can = false; }
+    if (!can) return;
+    ui.canEdit = true;
+    $('#bar').hidden = false;
+    checkDraft();
+  }
+  async function boot() {
+    drawWindow(); drawGround(); drawLight(); drawCoffee(); drawPlant();
+    renderAll(); route();
+    try {
+      const r = await fetch('data/site.json', { cache: 'no-store' });
+      if (r.ok) { const j = await r.json(); if (j && j.texts) { state = merge(DEFAULTS, j); renderAll(); } }
+    } catch (e) {}
+    loadStock();
+    initCaps();
+  }
+  boot();
+})();
+</script>
+
+
+</body></html>
