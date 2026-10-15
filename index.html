@@ -471,17 +471,34 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       if (rows.length < 2) return;
       const head = rows[0].map(x => x.trim().toLowerCase());
       const col = (n) => head.indexOf(n);
-      const iId = col('id'), iPrice = col('price'), iStatus = col('status');
-      if (iId < 0) return;
-      const by = {};
-      rows.slice(1).forEach(r => { const k = (r[iId] || '').trim(); if (k) by[k] = r; });
+      const g = (r, n) => { const i = col(n); return i < 0 ? '' : (r[i] || '').trim(); };
+      const stat = (v) => OV[v.toLowerCase()] || OV[v] || 'available';
+      const list = (v, sep) => v.split(sep).map(x => x.trim()).filter(Boolean);
+      const photoUrl = (x) => /^(https:\/\/|img\/)/.test(x) ? x : 'img/' + x;
       let changed = false;
-      for (const cat of CATS) for (const p of state.products[cat]) {
-        const r = by[p.id]; if (!r) continue;
-        const st = OV[(r[iStatus] || '').trim().toLowerCase()] || OV[(r[iStatus] || '').trim()];
-        if (st) p.availability = st;
-        const pr = (r[iPrice] || '').trim(); if (pr) p.price = pr;
-        changed = true;
+      if (col('name') >= 0 && col('category') >= 0) {
+        const out = { pottery: [], handwritten: [] };
+        rows.slice(1).forEach((r, n) => {
+          const cat = g(r, 'category').toLowerCase().startsWith('h') ? 'handwritten' : 'pottery';
+          const name = g(r, 'name'); if (!name) return;
+          if (g(r, 'show').toLowerCase() === 'no') return;
+          out[cat].push({ id: g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'),
+            availability: stat(g(r, 'status')), tags: list(g(r, 'tags'), /[,，;；]/), details: g(r, 'details').replace(/\\n/g, '\n'),
+            photos: list(g(r, 'photos'), /[,，;；]/).map(photoUrl) });
+        });
+        if (out.pottery.length || out.handwritten.length) { state.products = out; changed = true; }
+      } else {
+        const iId = col('id'), iPrice = col('price'), iStatus = col('status');
+        if (iId < 0) return;
+        const by = {};
+        rows.slice(1).forEach(r => { const k = (r[iId] || '').trim(); if (k) by[k] = r; });
+        for (const cat of CATS) for (const p of state.products[cat]) {
+          const r = by[p.id]; if (!r) continue;
+          const st = OV[(r[iStatus] || '').trim().toLowerCase()] || OV[(r[iStatus] || '').trim()];
+          if (st) p.availability = st;
+          const pr = (r[iPrice] || '').trim(); if (pr) p.price = pr;
+          changed = true;
+        }
       }
       if (changed) renderAll();
     } catch (e) {}
