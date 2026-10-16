@@ -207,6 +207,9 @@ button{font:inherit;color:inherit}
 .ordernote{margin:0;color:var(--ink-soft);font-size:12.5px;line-height:1.6;max-width:30em}
 .avail.reserved i{background:var(--ink-soft);opacity:.5}
 .badge.reserved{color:var(--paper);background:rgba(108,99,90,.85)}
+.onepiece{margin:0;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--glaze);text-transform:uppercase}
+.custom-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:0 0 26px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.custom-cta span{font-size:13.5px;color:var(--ink-soft)}
 .soldnote{margin:0;color:var(--ink-soft);font-size:13.5px;letter-spacing:.14em}
 /* ---------- edit mode ---------- */
 .edit-only{display:none!important}
@@ -356,6 +359,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       <div data-move="pottery.intro"><p class="intro" data-text="pottery.intro"></p></div>
     </section>
     <p class="hint edit-only">点击作品可修改价格、尺寸、状态与标签。Open a piece to edit its price, size, availability, tags and photos.</p>
+    <div class="custom-cta"><span>想要专属的杯子？Want a cup made just for you?</span><a class="order-btn" id="customCup" href="#" target="_blank" rel="noopener">定制手作杯 Request a custom cup</a></div>
     <div class="filters" id="filters-pottery"></div>
     <div class="grid" id="grid-pottery"></div>
   </main>
@@ -446,14 +450,14 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   const DEFAULTS = JSON.parse($('#defaults').textContent);
   const PAGES = ['home', 'pottery', 'handwritten', 'about'];
   const CATS = ['pottery', 'handwritten'];
-  const AV = { available: ['有货', 'Available'], reserved: ['已预留', 'Reserved'], order: ['可预订', 'Made to order'], sold: ['已售出', 'Sold'] };
+  const AV = { available: ['有货', 'Available'], reserved: ['已预留', 'Reserved'], sold: ['已售出', 'Sold'] };
 
   /* ===== SHOP SETTINGS (edit these two lines only) ===== */
-  const ORDER_FORM = 'https://tally.so/r/8NoeWY';
-  const ORDER_FORM_MTO = '';                         // made-to-order form link (leave empty to use the reserve form)   // your Tally order form
+  const FORMS = { pottery: 'https://tally.so/r/8NoeWY', handwritten: 'https://tally.so/r/8NoGYY' };  // reserve / order forms
+  const CUSTOM_CUP_FORM = 'https://tally.so/r/VLREvM';
   const STOCK_SHEET_CSV = 'https://docs.google.com/spreadsheets/d/15XCJfzMNb7OW8PlrNrlVxhciIKV4Qwba3aYRPnIo_J0/gviz/tq?tqx=out:csv&sheet=shop-stock';
   /* ====================================================== */
-  const OV = { available: 'available', reserved: 'reserved', '已预留': 'reserved', order: 'order', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'order', 'sold out': 'sold' };
+  const OV = { available: 'available', reserved: 'reserved', '已预留': 'reserved', order: 'available', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'available', 'sold out': 'sold' };
   function parseCSV(t) {
     const rows = []; let r = [], c = '', q = false;
     for (let i = 0; i < t.length; i++) {
@@ -807,6 +811,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const open = ui.open[cat] === p.id;
     const el = h('article', { class: 'card' + (open ? ' open' : ''), 'data-id': p.id });
     const ph = photoEl((p.photos || [])[0], p.name);
+    if (cat === 'pottery' && p.availability === 'available') ph.append(h('span', { class: 'badge one' }, '仅此一件 Only 1'));
     if (p.availability && p.availability !== 'available') ph.append(h('span', { class: 'badge ' + p.availability }, AV[p.availability] ? AV[p.availability][1] : ''));
     const nameEl = h('h3', { text: p.name || '' }), lineEl = h('p', { class: 'line', text: p.line || '' });
     el.append(h('button', { class: 'thumb', type: 'button', 'aria-expanded': String(open), onclick: () => { ui.open[cat] = p.id; ui.confirmDel = null; renderCat(cat); scrollToCard(cat, p.id); } }, ph, nameEl, lineEl));
@@ -861,19 +866,23 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           h('dt', null, '状态 Status'), h('dd', null, h('span', { class: 'avail ' + (p.availability || 'available') }, h('i'), `${av[0]} ${av[1]}`)),
           (p.tags || []).length ? h('dt', null, '标签 Tags') : null, (p.tags || []).length ? h('dd', null, tags) : null),
         p.details ? h('p', { class: 'desc', text: p.details }) : null,
-        orderBtn(p),
+        orderBtn(cat, p),
         h('button', { class: 'close', type: 'button', onclick: () => { ui.open[cat] = null; renderCat(cat); scrollToCard(cat, p.id); } }, '收起 Close')));
   }
-  function orderBtn(p) {
+  function orderBtn(cat, p) {
     if (p.availability === 'sold') return h('p', { class: 'soldnote', text: '已售出 Sold out' });
     const waitlist = p.availability === 'reserved';
     const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '');
-    const base = (p.availability === 'order' && ORDER_FORM_MTO) ? ORDER_FORM_MTO : ORDER_FORM;
+    const base = FORMS[cat] || FORMS.pottery;
     const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '');
-    const label = waitlist ? '加入候补 Join the waitlist' : p.availability === 'order' ? '预订 Order (made to order)' : '预留此作品 Reserve this piece';
-    const mto = p.availability === 'order';
-    const note = mto ? '此作品为预订制作。我会通过 WhatsApp 与你确认细节和制作时间。This piece is made to order. I will confirm details and timing with you on WhatsApp.' : waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.' : '先到先得 · 我会通过 WhatsApp 与你确认。First come, first served. I will confirm with you on WhatsApp.';
-    return h('div', { class: 'order-wrap' }, h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote', text: note }));
+    const one = cat === 'pottery';
+    const label = waitlist ? '加入候补 Join the waitlist' : one ? '预留此作品 Reserve this piece' : '下单 Order this item';
+    const note = waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.'
+      : one ? '先到先得 · 我会通过 WhatsApp 与你确认。First come, first served. I will confirm with you on WhatsApp.'
+      : '我会通过 WhatsApp 与你确认数量和付款。I will confirm quantity and payment with you on WhatsApp.';
+    return h('div', { class: 'order-wrap' },
+      one && !waitlist ? h('p', { class: 'onepiece', text: '仅此一件 Only 1 piece available' }) : null,
+      h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote', text: note }));
   }
   function detailEdit(cat, p) {
     const id = (f) => `f-${p.id}-${f}`;
@@ -916,8 +925,10 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   }
 
   function renderAll() {
+    CATS.forEach(c => state.products[c].forEach(p => { if (p.availability === 'order') p.availability = 'available'; }));
     applyTheme(); renderTexts(); applyTextStyles(); renderImages(); applyLayout();
     CATS.forEach(renderCat);
+    const cc = $('#customCup'); if (cc) cc.href = CUSTOM_CUP_FORM;
   }
 
   /* ---------------- routing ---------------- */
