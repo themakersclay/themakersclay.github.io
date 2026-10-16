@@ -203,6 +203,10 @@ button{font:inherit;color:inherit}
 
 .order-btn{justify-self:start;display:inline-block;background:var(--ink);color:var(--paper);padding:11px 26px;letter-spacing:.2em;font-size:13.5px;border:1px solid var(--ink);transition:background .2s,color .2s}
 .order-btn:hover{background:transparent;color:var(--ink)}
+.order-wrap{display:grid;gap:8px;justify-items:start}
+.ordernote{margin:0;color:var(--ink-soft);font-size:12.5px;line-height:1.6;max-width:30em}
+.avail.reserved i{background:var(--ink-soft);opacity:.5}
+.badge.reserved{color:var(--paper);background:rgba(108,99,90,.85)}
 .soldnote{margin:0;color:var(--ink-soft);font-size:13.5px;letter-spacing:.14em}
 /* ---------- edit mode ---------- */
 .edit-only{display:none!important}
@@ -442,13 +446,13 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   const DEFAULTS = JSON.parse($('#defaults').textContent);
   const PAGES = ['home', 'pottery', 'handwritten', 'about'];
   const CATS = ['pottery', 'handwritten'];
-  const AV = { available: ['有货', 'Available'], order: ['可预订', 'Made to order'], sold: ['已售出', 'Sold'] };
+  const AV = { available: ['有货', 'Available'], reserved: ['已预留', 'Reserved'], order: ['可预订', 'Made to order'], sold: ['已售出', 'Sold'] };
 
   /* ===== SHOP SETTINGS (edit these two lines only) ===== */
-  const ORDER_FORM = 'https://tally.so/r/VLREvM';   // your Tally order form
+  const ORDER_FORM = 'https://tally.so/r/8NoeWY';   // your Tally order form
   const STOCK_SHEET_CSV = 'https://docs.google.com/spreadsheets/d/15XCJfzMNb7OW8PlrNrlVxhciIKV4Qwba3aYRPnIo_J0/gviz/tq?tqx=out:csv&sheet=shop-stock';
   /* ====================================================== */
-  const OV = { available: 'available', order: 'order', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'order', 'sold out': 'sold' };
+  const OV = { available: 'available', reserved: 'reserved', '已预留': 'reserved', order: 'order', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'order', 'sold out': 'sold' };
   function parseCSV(t) {
     const rows = []; let r = [], c = '', q = false;
     for (let i = 0; i < t.length; i++) {
@@ -861,8 +865,12 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   }
   function orderBtn(p) {
     if (p.availability === 'sold') return h('p', { class: 'soldnote', text: '已售出 Sold out' });
-    const u = ORDER_FORM + (ORDER_FORM.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(p.name || '') + '&price=' + encodeURIComponent(p.price || '');
-    return h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, p.availability === 'order' ? '预订 Order (made to order)' : '下单 Order this piece');
+    const waitlist = p.availability === 'reserved';
+    const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '');
+    const u = ORDER_FORM + (ORDER_FORM.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '');
+    const label = waitlist ? '加入候补 Join the waitlist' : p.availability === 'order' ? '预订 Order (made to order)' : '预留此作品 Reserve this piece';
+    const note = waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.' : '先到先得 · 我会通过 WhatsApp 与你确认。First come, first served. I will confirm with you on WhatsApp.';
+    return h('div', { class: 'order-wrap' }, h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote', text: note }));
   }
   function detailEdit(cat, p) {
     const id = (f) => `f-${p.id}-${f}`;
