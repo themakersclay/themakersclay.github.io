@@ -449,7 +449,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   const AV = { available: ['有货', 'Available'], reserved: ['已预留', 'Reserved'], order: ['可预订', 'Made to order'], sold: ['已售出', 'Sold'] };
 
   /* ===== SHOP SETTINGS (edit these two lines only) ===== */
-  const ORDER_FORM = 'https://tally.so/r/8NoeWY';   // your Tally order form
+  const ORDER_FORM = 'https://tally.so/r/8NoeWY';
+  const ORDER_FORM_MTO = '';                         // made-to-order form link (leave empty to use the reserve form)   // your Tally order form
   const STOCK_SHEET_CSV = 'https://docs.google.com/spreadsheets/d/15XCJfzMNb7OW8PlrNrlVxhciIKV4Qwba3aYRPnIo_J0/gviz/tq?tqx=out:csv&sheet=shop-stock';
   /* ====================================================== */
   const OV = { available: 'available', reserved: 'reserved', '已预留': 'reserved', order: 'order', sold: 'sold', '有货': 'available', '可预订': 'order', '已售出': 'sold', 'in stock': 'available', 'made to order': 'order', 'sold out': 'sold' };
@@ -867,9 +868,11 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     if (p.availability === 'sold') return h('p', { class: 'soldnote', text: '已售出 Sold out' });
     const waitlist = p.availability === 'reserved';
     const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '');
-    const u = ORDER_FORM + (ORDER_FORM.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '');
+    const base = (p.availability === 'order' && ORDER_FORM_MTO) ? ORDER_FORM_MTO : ORDER_FORM;
+    const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '');
     const label = waitlist ? '加入候补 Join the waitlist' : p.availability === 'order' ? '预订 Order (made to order)' : '预留此作品 Reserve this piece';
-    const note = waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.' : '先到先得 · 我会通过 WhatsApp 与你确认。First come, first served. I will confirm with you on WhatsApp.';
+    const mto = p.availability === 'order';
+    const note = mto ? '此作品为预订制作。我会通过 WhatsApp 与你确认细节和制作时间。This piece is made to order. I will confirm details and timing with you on WhatsApp.' : waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.' : '先到先得 · 我会通过 WhatsApp 与你确认。First come, first served. I will confirm with you on WhatsApp.';
     return h('div', { class: 'order-wrap' }, h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote', text: note }));
   }
   function detailEdit(cat, p) {
