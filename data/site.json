@@ -170,5 +170,31 @@
     "photos": []
    }
   ]
- }
+ },
+ "cupnotes": [
+  {
+   "zh": "今天的茶，\n慢慢喝就好～",
+   "en": "take it slow"
+  },
+  {
+   "zh": "再坐一会儿，\n不急～",
+   "en": "stay a little longer"
+  },
+  {
+   "zh": "辛苦了，\n喝口热的吧～",
+   "en": "you did well today"
+  },
+  {
+   "zh": "不赶时间，\n慢慢来～",
+   "en": "no rush"
+  },
+  {
+   "zh": "慢一点，\n也没关系～",
+   "en": "slow is okay too"
+  },
+  {
+   "zh": "先喝一口，\n再继续～",
+   "en": "sip first, then carry on"
+  }
+ ]
 }
