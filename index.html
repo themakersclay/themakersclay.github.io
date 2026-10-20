@@ -173,7 +173,7 @@ button{font:inherit;color:inherit}
 .avail.sold i{background:var(--ink-soft)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .desc{white-space:pre-line;font-size:14px;margin:0;color:var(--ink)}
-.close{justify-self:start;background:var(--paper);color:var(--ink);border:1px solid #000;border-radius:999px;padding:7px 22px;cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;line-height:1.5;transition:background .2s,color .2s}
+.close{justify-self:start;background:none;border:none;border-bottom:1px solid var(--ink);padding:2px 0;cursor:pointer;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase}
 .empty-grid{grid-column:1/-1;color:var(--ink-soft);font-size:13.5px;padding:24px 0;border-top:1px solid var(--hair)}
 
 /* ---------- about ---------- */
@@ -205,7 +205,7 @@ button{font:inherit;color:inherit}
 }
 
 .order-btn{justify-self:start;display:inline-block;background:var(--paper);color:var(--ink);padding:9px 24px;letter-spacing:.18em;font-size:13.5px;line-height:1.5;border:1px solid #000;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
-.order-btn:hover,.close:hover{background:#4a4a4a;color:#fff}
+.order-btn:hover{background:#4a4a4a;color:#fff}
 .order-wrap{display:grid;gap:8px;justify-items:start}
 .ordernote span{display:block}
 .ordernote{margin:0;color:var(--ink-soft);font-size:12.5px;line-height:1.6;max-width:30em}
@@ -884,11 +884,11 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const one = cat === 'pottery';
     const label = waitlist ? '加入候补 Join the waitlist' : one ? '预留此作品 Reserve this piece' : '下单 Order this item';
     const note = waitlist ? ['此作品已被预留。请先填写表格，若有空缺我会联系你。', 'This piece is reserved. Please fill in the form first, and I will get in touch if it becomes free.']
-      : one ? ['先到先得 · 请先填写表格，我会再与你联系。', 'First come, first served. Please fill in the form first, then I will get in touch.']
+      : one ? null
       : ['请先填写表格，我会再与你联系确认数量和付款。', 'Please fill in the form first, then I will get in touch to confirm quantity and payment.'];
     return h('div', { class: 'order-wrap' },
       one && !waitlist ? h('p', { class: 'onepiece', text: '仅此一件 Only 1 piece available' }) : null,
-      h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote' }, h('span', { text: note[0] }), h('span', { text: note[1] })));
+      h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), note ? h('p', { class: 'ordernote' }, h('span', { text: note[0] }), h('span', { text: note[1] })) : null);
   }
   function detailEdit(cat, p) {
     const id = (f) => `f-${p.id}-${f}`;
