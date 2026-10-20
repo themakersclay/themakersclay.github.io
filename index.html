@@ -317,7 +317,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     <section class="hero cq">
       <div class="scene cq" aria-label="A pen-drawn window with one door open lets soft light fall onto a handbuilt footed dish, beside a cup of coffee and a potted plant">
         <div class="layer ground"><svg id="groundSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-        <div class="layer window" data-move="home.window"><svg id="winSvg" viewBox="0 0 400 470" aria-hidden="true"></svg></div>
+        <div class="layer window" data-move="home.window"><img id="winImg" src="img/window-collage.png" alt="" aria-hidden="true" style="display:block;width:100%;height:auto"></div>
         <div class="layer plant" data-move="home.plant"><svg id="plantSvg" viewBox="0 0 200 320" aria-hidden="true"></svg></div>
         <div class="layer pot" data-move="home.pot">
           <div class="pot-shadow"></div><div class="pot-contact"></div>
@@ -603,6 +603,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     return pen(d, 1, fill || 'none', fo == null ? 1 : fo) + pen(`M${x.toFixed(1)} ${y.toFixed(1)} L${(mx + (tx - mx) * .6).toFixed(1)} ${(my + (ty - my) * .6).toFixed(1)}`, .6);
   }
   function drawWindow() {
+    if (!$('#winSvg')) return;
     const r = rng(11), L = [];
     const seg = (x1, y1, x2, y2, w = 1.4, o = .85) => inkLine(r, L, x1, y1, x2, y2, w, o);
     // casing
