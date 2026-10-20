@@ -65,7 +65,7 @@ button{font:inherit;color:inherit}
 .scene{position:relative;aspect-ratio:1000/640;max-width:100%;min-width:0}
 .scene::before{content:"";position:absolute;inset:-4% -2%;pointer-events:none;
   background:
-    radial-gradient(ellipse 30% 44% at 24% 34%, rgba(255,250,240,.95), rgba(255,250,240,0) 72%),
+    radial-gradient(ellipse 30% 44% at 76% 34%, rgba(255,250,240,.95), rgba(255,250,240,0) 72%),
     radial-gradient(ellipse 62% 22% at 62% 90%, rgba(190,175,152,.55), rgba(190,175,152,0) 72%),
     linear-gradient(to bottom, rgba(207,195,175,0) 66%, rgba(207,195,175,.42) 78%, rgba(207,195,175,.15) 100%);
   -webkit-mask-image:radial-gradient(ellipse 52% 56% at 50% 52%, #000 62%, transparent 100%);
@@ -76,22 +76,22 @@ button{font:inherit;color:inherit}
 .ground{inset:0;pointer-events:none}
 .ground svg{height:100%}
 .window{left:3%;top:0;width:39%}
-.pot{left:50%;top:46%;width:36%}
+.pot{left:53.6%;top:55.4%;width:28.8%}
 .plant{left:6%;top:37%;width:10.5%}
 .coffee{left:37%;top:75%;width:12%}
 .steam{animation:steam 3.6s ease-in-out infinite alternate}
 @keyframes steam{from{opacity:.2;transform:translateY(3px)}to{opacity:.65;transform:translateY(-3px)}}
 @media (prefers-reduced-motion:reduce){.steam{animation:none;opacity:.45}}
 .pot img{display:block;width:100%;height:auto;position:relative;filter:brightness(1.05) saturate(.85) sepia(.05)}
-.pot-shadow{position:absolute;left:30%;right:-26%;bottom:-3%;height:16%;
-  background:radial-gradient(ellipse 50% 50% at 40% 50%, rgba(70,56,42,.42), rgba(70,56,42,0) 70%);
-  filter:blur(7px);transform:skewX(-38deg);transform-origin:left bottom}
+.pot-shadow{position:absolute;left:-26%;right:30%;bottom:-3%;height:16%;
+  background:radial-gradient(ellipse 50% 50% at 60% 50%, rgba(70,56,42,.42), rgba(70,56,42,0) 70%);
+  filter:blur(7px);transform:skewX(38deg);transform-origin:right bottom}
 .pot-contact{position:absolute;left:24%;right:22%;bottom:0;height:7%;
   background:radial-gradient(ellipse 50% 50% at 50% 55%, rgba(50,40,30,.55), rgba(50,40,30,0) 72%);filter:blur(3px)}
 .pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
-  background:linear-gradient(125deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
+  background:linear-gradient(235deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
   -webkit-mask:var(--pot-mask) center/100% 100% no-repeat;mask:var(--pot-mask) center/100% 100% no-repeat}
-.light{inset:0;pointer-events:none}
+.light{inset:0;pointer-events:none;transform:scaleX(-1)}
 .light svg{height:100%}
 .caption{right:2%;top:30%;width:max-content;max-width:26%;border-top:1px solid var(--hair);padding-top:6px}
 .caption p{margin:0;font-family:var(--f-mono);font-size:clamp(8px,1.05cqw,10.5px);letter-spacing:.18em;line-height:1.9;color:var(--ink-soft);white-space:pre-line}
@@ -100,8 +100,8 @@ button{font:inherit;color:inherit}
 @media (prefers-reduced-motion:reduce){.mote{animation:none;opacity:.5}}
 
 .title-block{writing-mode:vertical-rl;padding-top:clamp(8px,4cqw,56px);justify-self:end}
-.title-block h1{margin:0;font-family:var(--f-display);font-weight:300;font-size:calc(clamp(30px,5.2cqw,72px) * var(--title-scale));letter-spacing:.3em;line-height:1.2;margin-block-end:clamp(8px,1.6cqw,22px)}
-.title-block .sub{font-family:var(--f-mono);font-size:clamp(9px,1cqw,12px);letter-spacing:.42em;color:var(--ink-soft);margin:0;padding-top:.6em}
+.title-block h1{margin:0;font-family:var(--f-display);font-weight:300;font-size:calc(clamp(30px,5.2cqw,72px) * var(--title-scale));letter-spacing:.3em;line-height:1.2;margin-block-end:0}
+.title-block .sub{font-family:var(--f-mono);font-size:clamp(9px,1cqw,12px);letter-spacing:.42em;color:var(--ink-soft);margin:0 0 clamp(8px,1.6cqw,22px);padding-top:.6em}
 
 /* ---------- home index ---------- */
 .index{display:grid;grid-template-columns:auto repeat(2,minmax(0,340px));gap:clamp(18px,4cqw,56px);margin-top:clamp(36px,7vw,96px);align-items:start}
@@ -261,9 +261,9 @@ html,body{overflow-x:clip}
   .nav a{font-size:13px;letter-spacing:.14em}
   .nav a span.mono{letter-spacing:.12em}
   .hero{grid-template-columns:minmax(0,1fr);gap:14px}
-  .title-block{writing-mode:horizontal-tb;order:-1;justify-self:start;padding-top:4px}
+  .title-block{writing-mode:horizontal-tb;order:-1;justify-self:start;padding-top:4px;display:flex;flex-direction:column-reverse}
   .title-block h1{font-size:calc(36px * var(--title-scale));letter-spacing:.16em;margin-block-end:2px}
-  .title-block .sub{padding-top:0;font-size:11px;letter-spacing:.3em}
+  .title-block .sub{padding-top:0;margin:0;font-size:11px;letter-spacing:.3em}
   .caption{top:2%;right:0;max-width:44%}
   .about .ph.round{width:min(70%,220px)}
   .mv-ctl .lbl{display:none}
@@ -330,8 +330,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         <div class="layer caption" data-move="home.caption"><p data-text="home.caption"></p></div>
       </div>
       <div class="title-block" data-move="home.title">
-        <h1 data-text="home.title"></h1>
         <p class="sub" data-text="home.subtitle"></p>
+        <h1 data-text="home.title"></h1>
       </div>
     </section>
 
