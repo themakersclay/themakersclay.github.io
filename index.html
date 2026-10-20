@@ -91,6 +91,15 @@ button{font:inherit;color:inherit}
 .pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
   background:linear-gradient(235deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
   -webkit-mask:var(--pot-mask) center/100% 100% no-repeat;mask:var(--pot-mask) center/100% 100% no-repeat}
+.friend{position:absolute;pointer-events:auto}
+.friend img{display:block;width:100%;height:auto;position:relative;filter:brightness(1.04) saturate(.92);transform-origin:50% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.friend::before{content:"";position:absolute;left:-18%;right:12%;bottom:-4%;height:12%;background:radial-gradient(ellipse 50% 50% at 55% 50%,rgba(70,56,42,.4),rgba(70,56,42,0) 72%);filter:blur(3px);transform:skewX(34deg);transform-origin:right bottom}
+.friend:hover img{transform:rotate(-5deg) translateY(-2%)}
+.f1{left:33.5%;bottom:10%;width:8%}
+.f2{left:42%;bottom:7.6%;width:10.5%}
+.f3{left:64.2%;bottom:34.5%;width:11%}
+.f4{left:83%;bottom:7%;width:9.5%}
+.f3::before{display:none}
 .light{inset:0;pointer-events:none;transform:scaleX(-1)}
 .light svg{height:100%}
 .caption{right:2%;top:30%;width:max-content;max-width:26%;border-top:1px solid var(--hair);padding-top:6px}
@@ -326,6 +335,10 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           <button class="ebtn img-btn edit-only" data-for="home.pot" type="button">换照片 Replace photo</button>
         </div>
         <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
+        <div class="friend f1"><img src="img/friends/friend-1-cup.png" alt="" aria-hidden="true"></div>
+        <div class="friend f2"><img src="img/friends/friend-2-book.png" alt="" aria-hidden="true"></div>
+        <div class="friend f3"><img src="img/friends/friend-3-smile.png" alt="" aria-hidden="true"></div>
+        <div class="friend f4"><img src="img/friends/friend-4-lying.png" alt="" aria-hidden="true"></div>
         <div class="layer light" data-move="home.light"><svg id="lightSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
         <div class="layer caption" data-move="home.caption"><p data-text="home.caption"></p></div>
       </div>
