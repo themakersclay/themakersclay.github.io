@@ -883,9 +883,9 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '') + '&code=' + encodeURIComponent(p.id || '');
     const one = cat === 'pottery';
     const label = waitlist ? '加入候补 Join the waitlist' : one ? '预留此作品 Reserve this piece' : '下单 Order this item';
-    const note = waitlist ? ['此作品已被预留。若有空缺，我会第一时间通知你。', 'This piece is reserved. I will tell you first if it becomes free.']
-      : one ? ['先到先得 · 我会通过 WhatsApp 与你确认。', 'First come, first served. I will confirm with you on WhatsApp.']
-      : ['我会通过 WhatsApp 与你确认数量和付款。', 'I will confirm quantity and payment with you on WhatsApp.'];
+    const note = waitlist ? ['此作品已被预留。请先填写表格，若有空缺我会联系你。', 'This piece is reserved. Please fill in the form first, and I will get in touch if it becomes free.']
+      : one ? ['先到先得 · 请先填写表格，我会再与你联系。', 'First come, first served. Please fill in the form first, then I will get in touch.']
+      : ['请先填写表格，我会再与你联系确认数量和付款。', 'Please fill in the form first, then I will get in touch to confirm quantity and payment.'];
     return h('div', { class: 'order-wrap' },
       one && !waitlist ? h('p', { class: 'onepiece', text: '仅此一件 Only 1 piece available' }) : null,
       h('a', { class: 'order-btn', href: u, target: '_blank', rel: 'noopener' }, label), h('p', { class: 'ordernote' }, h('span', { text: note[0] }), h('span', { text: note[1] })));
