@@ -874,7 +874,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const waitlist = p.availability === 'reserved';
     const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '');
     const base = FORMS[cat] || FORMS.pottery;
-    const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '');
+    const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '') + '&code=' + encodeURIComponent(p.id || '');
     const one = cat === 'pottery';
     const label = waitlist ? '加入候补 Join the waitlist' : one ? '预留此作品 Reserve this piece' : '下单 Order this item';
     const note = waitlist ? '此作品已被预留。若有空缺，我会第一时间通知你。This piece is reserved. I will tell you first if it becomes free.'
