@@ -491,13 +491,13 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           const cat = g(r, 'category').toLowerCase().startsWith('h') ? 'handwritten' : 'pottery';
           const name = g(r, 'name'); if (!name) return;
           if (g(r, 'show').toLowerCase() === 'no') return;
-          out[cat].push({ id: g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'),
+          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'),
             availability: stat(g(r, 'status')), tags: list(g(r, 'tags'), /[,，;；]/), details: g(r, 'details').replace(/\\n/g, '\n'),
             photos: list(g(r, 'photos'), /[,，;；]/).map(photoUrl) });
         });
         if (out.pottery.length || out.handwritten.length) { state.products = out; changed = true; }
       } else {
-        const iId = col('id'), iPrice = col('price'), iStatus = col('status');
+        const iId = col('code') >= 0 ? col('code') : col('id'), iPrice = col('price'), iStatus = col('status');
         if (iId < 0) return;
         const by = {};
         rows.slice(1).forEach(r => { const k = (r[iId] || '').trim(); if (k) by[k] = r; });
