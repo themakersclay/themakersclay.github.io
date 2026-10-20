@@ -76,18 +76,17 @@ button{font:inherit;color:inherit}
 .ground{inset:0;pointer-events:none}
 .ground svg{height:100%}
 .window{left:3%;top:0;width:39%}
-.pot{left:60%;top:66.7%;width:18%}
+.pot{left:58.2%;top:61.4%;width:21.6%}
 .plant{left:6%;top:37%;width:10.5%}
 .coffee{left:37%;top:75%;width:12%}
 .steam{animation:steam 3.6s ease-in-out infinite alternate}
 @keyframes steam{from{opacity:.2;transform:translateY(3px)}to{opacity:.65;transform:translateY(-3px)}}
 @media (prefers-reduced-motion:reduce){.steam{animation:none;opacity:.45}}
-.steamlines{position:absolute;left:14%;width:72%;bottom:93%;height:auto;overflow:visible;pointer-events:none}
 .pot img{display:block;width:100%;height:auto;position:relative;filter:brightness(1.05) saturate(.85) sepia(.05)}
 .pot-shadow{position:absolute;left:-26%;right:30%;bottom:-3%;height:16%;
   background:radial-gradient(ellipse 50% 50% at 60% 50%, rgba(70,56,42,.42), rgba(70,56,42,0) 70%);
   filter:blur(7px);transform:skewX(38deg);transform-origin:right bottom}
-.pot-contact{position:absolute;left:24%;right:22%;bottom:0;height:7%;
+.pot-contact{position:absolute;left:2%;right:2%;bottom:-3%;height:9%;
   background:radial-gradient(ellipse 50% 50% at 50% 55%, rgba(50,40,30,.55), rgba(50,40,30,0) 72%);filter:blur(3px)}
 .pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
   background:linear-gradient(235deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
@@ -324,14 +323,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           <div class="pot-shadow"></div><div class="pot-contact"></div>
           <img data-img="home.pot" src="img/cup-upright.png" alt="Handbuilt cup with a layered brown and blue glaze">
           <div class="pot-glow"></div>
-          <svg class="steamlines" viewBox="0 0 300 170" aria-hidden="true">
-            <g fill="none" stroke="#6C635A" stroke-width="5" stroke-linecap="round" opacity=".38" filter="url(#steamBlur)">
-              <path d="M90 168 C 70 140, 112 118, 92 88 C 80 66, 100 48, 92 22"/>
-              <path d="M150 168 C 130 136, 172 110, 150 78 C 136 56, 158 36, 148 8"/>
-              <path d="M210 168 C 192 142, 230 120, 212 92 C 200 72, 218 54, 210 30"/>
-            </g>
-            <defs><filter id="steamBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter></defs>
-          </svg>
+
           <button class="ebtn img-btn edit-only" data-for="home.pot" type="button">换照片 Replace photo</button>
         </div>
         <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
