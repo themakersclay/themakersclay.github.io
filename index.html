@@ -76,12 +76,24 @@ button{font:inherit;color:inherit}
 .ground{inset:0;pointer-events:none}
 .ground svg{height:100%}
 .window{left:3%;top:0;width:39%}
-.pot{left:56%;top:55%;width:24%}
+.pot{left:56%;top:50%;width:24%}
 .plant{left:6%;top:37%;width:10.5%}
 .coffee{left:37%;top:75%;width:12%}
 .steam{animation:steam 3.6s ease-in-out infinite alternate}
 @keyframes steam{from{opacity:.2;transform:translateY(3px)}to{opacity:.65;transform:translateY(-3px)}}
 @media (prefers-reduced-motion:reduce){.steam{animation:none;opacity:.45}}
+.dancer{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.dancer g.limb{fill:#F1ECE1;stroke:#2B2723;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+.dancer path.line,.dancer .line{fill:none}
+.dancer .armA{transform-origin:215px 200px;animation:waveA 1.6s ease-in-out infinite alternate}
+.dancer .armB{transform-origin:690px 650px;animation:waveB 1.6s ease-in-out infinite alternate-reverse}
+.dancer .legA{transform-origin:150px 598px;animation:kickA 1.6s ease-in-out infinite alternate}
+.dancer .legB{transform-origin:322px 752px;animation:kickB 1.6s ease-in-out infinite alternate-reverse}
+@keyframes waveA{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+@keyframes waveB{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}
+@keyframes kickA{from{transform:rotate(-7deg)}to{transform:rotate(8deg)}}
+@keyframes kickB{from{transform:rotate(8deg)}to{transform:rotate(-8deg)}}
+@media (prefers-reduced-motion:reduce){.dancer .limb{animation:none!important}}
 .pot img{display:block;width:100%;height:auto;position:relative;filter:brightness(1.05) saturate(.85) sepia(.05)}
 .pot-shadow{position:absolute;left:-26%;right:30%;bottom:-3%;height:16%;
   background:radial-gradient(ellipse 50% 50% at 60% 50%, rgba(70,56,42,.42), rgba(70,56,42,0) 70%);
@@ -323,6 +335,12 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           <div class="pot-shadow"></div><div class="pot-contact"></div>
           <img data-img="home.pot" src="img/cup-cutout.png" alt="Handbuilt cup with a layered brown and blue glaze">
           <div class="pot-glow"></div>
+          <svg class="dancer" viewBox="0 0 900 888" preserveAspectRatio="none" aria-hidden="true">
+            <g class="limb legA"><path class="line" d="M150 598 C 120 670, 90 730, 40 800"/><path d="M40 800 C -10 790, -40 840, 0 868 C 50 884, 100 850, 40 800 Z"/></g>
+            <g class="limb legB"><path class="line" d="M322 752 C 370 800, 420 810, 480 836"/><path d="M480 836 C 520 800, 580 826, 560 866 C 536 900, 486 890, 480 836 Z"/></g>
+            <g class="limb armA"><path class="line" d="M215 200 C 140 150, 90 90, 40 20"/><circle cx="28" cy="2" r="40"/><path class="line" d="M0 -30 L-14 -56 M28 -42 L28 -72 M56 -30 L72 -54"/></g>
+            <g class="limb armB"><path class="line" d="M690 650 C 770 630, 840 690, 880 620"/><circle cx="892" cy="598" r="40"/><path class="line" d="M920 570 L944 552 M896 556 L900 520 M866 574 L856 546"/></g>
+          </svg>
           <button class="ebtn img-btn edit-only" data-for="home.pot" type="button">换照片 Replace photo</button>
         </div>
         <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
