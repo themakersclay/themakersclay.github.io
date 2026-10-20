@@ -91,6 +91,11 @@ button{font:inherit;color:inherit}
 .pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
   background:linear-gradient(235deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
   -webkit-mask:var(--pot-mask) center/100% 100% no-repeat;mask:var(--pot-mask) center/100% 100% no-repeat}
+.cupnote{left:50%;top:37.5%;width:20%;pointer-events:none}
+.cupnote svg{display:block;width:100%;height:auto;overflow:visible}
+.cupnote svg path{fill:none;stroke:#2B2723;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.cupnote p{position:absolute;left:0;right:0;top:4%;margin:0;text-align:center;font-family:"Long Cang","Ma Shan Zheng","Noto Sans SC",cursive;font-size:clamp(11px,1.75cqw,22px);line-height:1.35;color:var(--ink);letter-spacing:.06em}
+.cupnote p small{display:block;font-family:"Patrick Hand","Caveat",cursive;font-size:.78em;letter-spacing:.04em;color:var(--ink-soft)}
 .light{inset:0;pointer-events:none;transform:scaleX(-1)}
 .light svg{height:100%}
 .caption{right:2%;top:30%;width:max-content;max-width:26%;border-top:1px solid var(--hair);padding-top:6px}
@@ -258,6 +263,8 @@ html,body{overflow-x:clip}
   .avatar .mono{display:none}
 }
 @media (max-width:600px){
+  .cupnote{left:42%;top:30%;width:36%}
+  .cupnote p{font-size:10px}
   .nav a{font-size:13px;letter-spacing:.14em}
   .nav a span.mono{letter-spacing:.12em}
   .hero{grid-template-columns:minmax(0,1fr);gap:14px}
@@ -328,6 +335,10 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         </div>
         <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
         <div class="layer light" data-move="home.light"><svg id="lightSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+        <div class="layer cupnote" aria-hidden="true">
+          <svg viewBox="0 0 200 104"><path d="M8 4 C 4 56, 34 72, 92 70 C 104 76, 118 86, 128 100 C 128 88, 130 78, 134 68 C 170 62, 192 40, 190 2"/></svg>
+          <p>今天的茶，<br>慢慢喝就好～<small>take it slow</small></p>
+        </div>
         <div class="layer caption" data-move="home.caption"><p data-text="home.caption"></p></div>
       </div>
       <div class="title-block" data-move="home.title">
