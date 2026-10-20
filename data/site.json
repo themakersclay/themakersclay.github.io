@@ -32,8 +32,8 @@
   "home.pot": "img/pot.webp",
   "home.idx.pottery": "img/pot-photo.jpg",
   "home.idx.handwritten": "img/handwritten-cover.jpg",
-  "home.idx.about": "img/lydia.jpg",
-  "about.photo": "img/lydia.jpg"
+  "home.idx.about": "img/illustrations/person-with-glasses.png",
+  "about.photo": "img/illustrations/person-with-glasses.png"
  },
  "layout": {
   "about.who": {
