@@ -105,8 +105,9 @@ button{font:inherit;color:inherit}
 @keyframes drift{0%{transform:translate(0,0);opacity:.15}50%{opacity:.85}100%{transform:translate(14px,22px);opacity:.25}}
 @media (prefers-reduced-motion:reduce){.mote{animation:none;opacity:.5}}
 
-.title-block{writing-mode:vertical-rl;padding-top:clamp(8px,4cqw,56px);justify-self:end}
+.title-block{position:relative;writing-mode:vertical-rl;padding-top:clamp(8px,4cqw,56px);justify-self:end}
 .title-block h1{margin:0;font-family:var(--f-display);font-weight:300;font-size:calc(clamp(30px,5.2cqw,72px) * var(--title-scale));letter-spacing:.3em;line-height:1.2;margin-block-end:0}
+.title-block .bird{position:absolute;right:calc(100% + .35em);top:clamp(6px,3.4cqw,48px);width:clamp(32px,4.4cqw,62px);height:auto;pointer-events:none}
 .title-block .sub{font-family:var(--f-mono);font-size:clamp(9px,1cqw,12px);letter-spacing:.42em;color:var(--ink-soft);margin:0 0 clamp(8px,1.6cqw,22px);padding-top:.6em}
 
 /* ---------- home index ---------- */
@@ -271,6 +272,7 @@ html,body{overflow-x:clip}
   .hero{grid-template-columns:minmax(0,1fr);gap:14px}
   .title-block{writing-mode:horizontal-tb;order:-1;justify-self:start;padding-top:4px;display:flex;flex-direction:column-reverse}
   .title-block h1{font-size:calc(36px * var(--title-scale));letter-spacing:.16em;margin-block-end:2px}
+  .title-block .bird{right:auto;left:calc(100% + 12px);top:0;width:38px}
   .title-block .sub{padding-top:0;margin:0;font-size:11px;letter-spacing:.3em}
   .caption{top:2%;right:0;max-width:44%}
   .about .ph.round{width:min(70%,220px)}
@@ -347,6 +349,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       <div class="title-block" data-move="home.title">
         <p class="sub" data-text="home.subtitle"></p>
         <h1 data-text="home.title"></h1>
+        <img class="bird" src="img/handwriting/illustrations/bird.png" alt="" aria-hidden="true">
       </div>
     </section>
 
