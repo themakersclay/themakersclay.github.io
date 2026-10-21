@@ -26,9 +26,7 @@
   "about.nameZh": "黄惠敏",
   "about.zh": "我来自怡保，也住过许多不同的城市。近2023年, 我第一次接触陶作，当时主要是因为治疗忧郁症而有机会尝试---从中学习慢下脚步去思考、养伤、及成长。\n\n目前 the makers clay 是个人团队，而我的丈夫与孩子是我的铁粉。我喜欢简单与安静，也喜欢透过日常趣味的东西找到并给予情绪的一个出口。\n\n面对忧郁很艰难，陶作也不容易---这些磨练虽然没有让我变得更强大，却让我看见我依然像陶瓷一样脆弱。可是虽然脆弱，我有那造我的那一位强大的原创者做我的永恒的堡垒。",
   "about.en": "I was born in Ipoh, and lived in various cities in different parts of the world. In the recent years, I was introduced to pottery, mainly was to help cope with my prolonged depression. Through smashing, pinching, smoothing and waiting in the process, I had a chance to slow down my heart and racing thoughts to think, recover, and grow.\n\nAt the moment, I'm a solo team--along with my hubby and son as my top permanent fans. I like simpleness and quietness, and I enjoy discovering and expressing my emotions and passions through many simple yet meaningful daily stuff.\n\nIt is extremely hard coping with depression, and pottery is not easy either - battling with them didn't make me stronger. I am still the weak vessel, but I know an almighty potter, who is my Creator, to be my fortress forever.",
-  "footer.line": "HANDBUILT BY LYDIA",
-  "home.cupnote": "今天的茶，\n慢慢喝就好～",
-  "home.cupnoteEn": "take it slow"
+  "footer.line": "HANDBUILT BY LYDIA"
  },
  "images": {
   "home.pot": "img/pot.webp",
@@ -171,62 +169,19 @@
    }
   ]
  },
- "cupnotes": [
-  {
-   "zh": "面包会变硬，咖啡会变凉，主的信实不会。",
-   "en": ""
-  },
-  {
-   "zh": "我以为我在塑造孩子，神却借着孩子塑造我。",
-   "en": ""
-  },
-  {
-   "zh": "忧虑莓莓：“我把明天想了十遍，神还是只给我今天。”",
-   "en": ""
-  },
-  {
-   "zh": "有用，不等于毫无瑕疵。",
-   "en": ""
-  },
-  {
-   "zh": "一碗热汤，一句“慢慢吃”，是家的模样。",
-   "en": ""
-  },
-  {
-   "zh": "今天不是坏天气，是我心情有点下雨。",
-   "en": ""
-  },
-  {
-   "zh": "生活没有暂停键，但我偷偷把“泡一杯咖啡”当作储存点。",
-   "en": ""
-  },
-  {
-   "zh": "洗衣、晒被、换尿片——这些看似平凡的事，主都看为美。",
-   "en": ""
-  },
-  {
-   "zh": "没关系，主比风浪更大。",
-   "en": ""
-  },
-  {
-   "zh": "今天的阳光，是神的温柔提醒：你被爱着。",
-   "en": ""
-  },
-  {
-   "zh": "面包香满屋，想起祂说：我就是生命的粮。",
-   "en": ""
-  },
-  {
-   "zh": "情绪有点灰时，也记得：主仍在织，我只是还没看到正面。",
-   "en": ""
-  },
-  {
-   "zh": "感谢祂，用日光、鸟鸣和一杯温茶把我包围。",
-   "en": ""
-  },
-  {
-   "zh": "我以为问题是困境；福音说：问题更深，恩典更大。",
-   "en": ""
-  }
+ "cupphrases": [
+  "img/handwriting/text/zh-01-notebook.png",
+  "img/handwriting/text/zh-02-how-long.png",
+  "img/handwriting/text/zh-03-compare-flowers.png",
+  "img/handwriting/text/zh-04-fear-failure.png",
+  "img/handwriting/text/zh-05-heavy-bag.png",
+  "img/handwriting/text/zh-06-open-shop.png",
+  "img/handwriting/text/zh-07-small-me.png",
+  "img/handwriting/text/zh-08-blame.png",
+  "img/handwriting/text/zh-09-fruit-today.png",
+  "img/handwriting/text/zh-10-water-sweet.png",
+  "img/handwriting/text/zh-11-clouds-grandma.png",
+  "img/handwriting/text/zh-12-barber.png",
+  "img/handwriting/text/zh-13-haircut.png"
  ]
 }
