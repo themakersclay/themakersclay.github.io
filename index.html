@@ -91,11 +91,10 @@ button{font:inherit;color:inherit}
 .pot-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;
   background:linear-gradient(235deg, rgba(255,250,236,.7) 0%, rgba(255,250,236,.2) 38%, rgba(255,250,236,0) 60%);
   -webkit-mask:var(--pot-mask) center/100% 100% no-repeat;mask:var(--pot-mask) center/100% 100% no-repeat}
-.cupnote{left:66%;bottom:45%;width:max-content;transform:translateX(-64%);pointer-events:none;opacity:0;transition:opacity .6s ease}
+.cupnote{left:66%;bottom:49.5%;width:max-content;transform:translateX(-64%);pointer-events:none;opacity:0;transition:opacity .6s ease}
 .cupnote.ready{opacity:1}
-.cupnote .bub{position:relative;padding:.8em 1.1em 1.3em}
-.cupnote .bub>svg.body{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.cupnote .bub>svg.tail{position:absolute;left:58%;top:100%;width:12%;height:auto;overflow:visible}
+.cupnote .bub{position:relative;padding:.2em .4em .9em}
+.cupnote .bub>svg.tail{position:absolute;left:calc(64% - 3px);top:calc(100% - .6em);width:5.6cqw;height:auto;overflow:visible}
 .cupnote svg path{fill:none;stroke:#2B2723;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .cupnote img{position:relative;display:block;height:auto;max-width:none}
 .light{inset:0;pointer-events:none;transform:scaleX(-1)}
@@ -265,7 +264,8 @@ html,body{overflow-x:clip}
   .avatar .mono{display:none}
 }
 @media (max-width:600px){
-  .cupnote{left:72%;bottom:42%}
+  .cupnote{left:72%;bottom:47%}
+  .cupnote .bub>svg.tail{width:7cqw}
   .nav a{font-size:13px;letter-spacing:.14em}
   .nav a span.mono{letter-spacing:.12em}
   .hero{grid-template-columns:minmax(0,1fr);gap:14px}
@@ -338,8 +338,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         <div class="layer light" data-move="home.light"><svg id="lightSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
         <div class="layer cupnote" aria-hidden="true">
           <div class="bub">
-            <svg class="body" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M58 100 C 30 100, 2 94, 0 44 L 0 0 M70 100 C 90 98, 100 82, 100 0"/></svg>
-            <svg class="tail" viewBox="0 0 12 6"><path d="M0.5 0 C 2 3, 3.6 5.2, 6 5.4 C 8.4 5.2, 10 3, 11.5 0"/></svg>
+            <svg class="tail" viewBox="0 0 30 44"><path d="M3 2 C 6 14, 4 28, 26 42"/></svg>
             <img id="cupPhrase" alt="" aria-hidden="true">
           </div>
         </div>
