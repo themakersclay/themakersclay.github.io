@@ -498,13 +498,23 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     if (c !== '' || r.length) { r.push(c); rows.push(r); }
     return rows;
   }
+  const STOCK_CACHE = 'tmc_stock_csv';
+  function cachedStock() { try { return localStorage.getItem(STOCK_CACHE) || ''; } catch (e) { return ''; } }
+  function applyCachedStock() { const t = cachedStock(); if (t) { try { return applyStock(t); } catch (e) {} } return false; }
   async function loadStock() {
     if (!STOCK_SHEET_CSV) return;
     try {
       const res = await fetch(STOCK_SHEET_CSV + (STOCK_SHEET_CSV.includes('?') ? '&' : '?') + 't=' + Date.now());
       if (!res.ok) return;
-      const rows = parseCSV(await res.text()).filter(r => r.some(x => x.trim()));
-      if (rows.length < 2) return;
+      const text = await res.text();
+      if (text === cachedStock()) return;            // same as what is already on screen: no redraw, no flash
+      if (applyStock(text)) { try { localStorage.setItem(STOCK_CACHE, text); } catch (e) {} renderAll(); }
+    } catch (e) {}
+  }
+  function applyStock(text) {
+    {
+      const rows = parseCSV(text).filter(r => r.some(x => x.trim()));
+      if (rows.length < 2) return false;
       const head = rows[0].map(x => x.trim().toLowerCase());
       const col = (n) => head.indexOf(n);
       const g = (r, n) => { const i = col(n); return i < 0 ? '' : (r[i] || '').trim(); };
@@ -525,7 +535,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         if (out.pottery.length || out.handwritten.length) { state.products = out; changed = true; }
       } else {
         const iId = col('code') >= 0 ? col('code') : col('id'), iPrice = col('price'), iStatus = col('status');
-        if (iId < 0) return;
+        if (iId < 0) return false;
         const by = {};
         rows.slice(1).forEach(r => { const k = (r[iId] || '').trim(); if (k) by[k] = r; });
         for (const cat of CATS) for (const p of state.products[cat]) {
@@ -536,8 +546,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           changed = true;
         }
       }
-      if (changed) renderAll();
-    } catch (e) {}
+      return changed;
+    }
   }
   const DRAFT_KEY = 'makersclay-draft-v1';
   const okUrl = (u) => typeof u === 'string' && u !== '' && (/^img\//.test(u) || /^\/[^/]/.test(u) || /^https:\/\//.test(u) || /^blob:/.test(u));
@@ -1264,11 +1274,12 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   }
   async function boot() {
     drawWindow(); drawGround(); drawLight(); drawCoffee(); drawPlant();
+    applyCachedStock();
     renderAll(); route();
     let scenes = DEFAULTS.scenes;
     try {
       const r = await fetch('data/site.json', { cache: 'no-store' });
-      if (r.ok) { const j = await r.json(); if (j && j.texts) { state = merge(DEFAULTS, j); if (Array.isArray(j.scenes) && j.scenes.length) scenes = j.scenes; renderAll(); } }
+      if (r.ok) { const j = await r.json(); if (j && j.texts) { state = merge(DEFAULTS, j); if (Array.isArray(j.scenes) && j.scenes.length) scenes = j.scenes; applyCachedStock(); renderAll(); } }
     } catch (e) {}
     showScene(scenes);
     loadStock();
