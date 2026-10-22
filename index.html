@@ -76,6 +76,9 @@ button{font:inherit;color:inherit}
 .ground{inset:0;pointer-events:none}
 .ground svg{height:100%}
 .window{left:3%;top:0;width:39%}
+.doodles{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;margin-top:20px}
+.doodles img{height:44px;width:auto;max-width:72px;object-fit:contain;display:block}
+@media (max-width:600px){.doodles{gap:10px 16px}.doodles img{height:36px;max-width:58px}}
 .pot{left:58.2%;top:64.7%;width:21.6%}
 .plant{left:6%;top:37%;width:10.5%}
 .coffee{left:37%;top:75%;width:12%}
@@ -380,7 +383,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   <main id="page-pottery" class="page cq" data-page="pottery" hidden>
     <section class="subhead">
       <div class="vt" data-move="pottery.head"><h1 data-text="pottery.title"></h1><span class="mono" data-text="pottery.titleEn"></span></div>
-      <div data-move="pottery.intro"><p class="intro" data-text="pottery.intro"></p></div>
+      <div data-move="pottery.intro"><p class="intro" data-text="pottery.intro"></p><div class="doodles" aria-hidden="true"><img src="img/illustrations/stacked-cups.png" alt=""><img src="img/illustrations/cup-and-flower.png" alt=""><img src="img/illustrations/plant.png" alt=""></div></div>
     </section>
     <p class="hint edit-only">点击作品可修改价格、尺寸、状态与标签。Open a piece to edit its price, size, availability, tags and photos.</p>
     <div class="custom-cta"><span>想要专属的杯子？Want a cup made just for you?</span><a class="order-btn" id="customCup" href="#" target="_blank" rel="noopener">定制手作杯 Request a custom cup</a></div>
@@ -392,7 +395,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   <main id="page-handwritten" class="page cq" data-page="handwritten" hidden>
     <section class="subhead">
       <div class="vt" data-move="handwritten.head"><h1 data-text="handwritten.title"></h1><span class="mono" data-text="handwritten.titleEn"></span></div>
-      <div data-move="handwritten.intro"><p class="intro" data-text="handwritten.intro"></p></div>
+      <div data-move="handwritten.intro"><p class="intro" data-text="handwritten.intro"></p><div class="doodles" aria-hidden="true"><img src="img/handwriting/illustrations/book.png" alt=""><img src="img/handwriting/illustrations/sprout.png" alt=""><img src="img/handwriting/illustrations/clock.png" alt=""></div></div>
     </section>
     <p class="hint edit-only">点击作品可修改价格、尺寸、状态与标签。Open a piece to edit its price, size, availability, tags and photos.</p>
     <div class="filters" id="filters-handwritten"></div>
