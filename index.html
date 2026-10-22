@@ -75,7 +75,7 @@ button{font:inherit;color:inherit}
 .layer svg{display:block;width:100%;height:auto;overflow:visible}
 .ground{inset:0;pointer-events:none}
 .ground svg{height:100%}
-.window{left:22%;top:34%;transform:translate(-50%,-50%);width:auto;opacity:0;transition:opacity .6s ease}
+.window{display:flex;justify-content:center;margin:0 0 .5em;opacity:0;transition:opacity .6s ease}
 .window.ready{opacity:1}
 .window img{display:block;height:auto;max-width:none}
 .pot{left:58.2%;top:64.7%;width:21.6%}
@@ -267,7 +267,7 @@ html,body{overflow-x:clip}
   .avatar .mono{display:none}
 }
 @media (max-width:600px){
-  .cupnote{left:72%;bottom:47%}
+  .cupnote{left:72%;bottom:46%}.window{justify-content:flex-start;padding-left:.4em}
   .cupnote .bub>svg.tail{width:7cqw}
   .nav a{font-size:13px;letter-spacing:.14em}
   .nav a span.mono{letter-spacing:.12em}
@@ -329,7 +329,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     <section class="hero cq">
       <div class="scene cq" aria-label="A pen-drawn window with one door open lets soft light fall onto a handbuilt footed dish, beside a cup of coffee and a potted plant">
         <div class="layer ground"><svg id="groundSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-        <div class="layer window" data-move="home.window"><img id="artImg" alt="" aria-hidden="true"></div>
+        
         <div class="layer plant" data-move="home.plant"><svg id="plantSvg" viewBox="0 0 200 320" aria-hidden="true"></svg></div>
         <div class="layer pot" data-move="home.pot">
           <div class="pot-shadow"></div><div class="pot-contact"></div>
@@ -341,7 +341,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         <div class="layer coffee" data-move="home.coffee"><svg id="coffeeSvg" viewBox="0 0 200 200" aria-hidden="true"></svg></div>
         <div class="layer light" data-move="home.light"><svg id="lightSvg" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg></div>
         <div class="layer cupnote" aria-hidden="true">
-          <div class="bub">
+          <div class="bub"><div class="window"><img id="artImg" alt="" aria-hidden="true"></div>
             <svg class="tail" viewBox="0 0 30 44"><path d="M3 2 C 6 14, 4 28, 26 42"/></svg>
             <img id="cupPhrase" alt="" aria-hidden="true">
           </div>
@@ -1255,7 +1255,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const sc = list[sceneIdx] || {};
     const phone = window.matchMedia('(max-width:600px)').matches;
     const k = phone ? 0.08 : 0.06;              // handwriting size (cqw per image pixel)
-    const maxArt = phone ? 18 : 13;              // longest side of the drawing (cqw)
+    const maxArt = phone ? 12 : 10;              // longest side of the drawing (cqw)
     const load = (el, src) => new Promise(res => { el.onload = () => res(true); el.onerror = () => res(false); el.src = src; });
     Promise.all([load(txt, sc.text), load(art, sc.art)]).then(([a, b]) => {
       if (a) { txt.style.width = (txt.naturalWidth * k) + 'cqw'; box.classList.add('ready'); }
