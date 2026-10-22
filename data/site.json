@@ -132,7 +132,9 @@
      "钵 Bowl"
     ],
     "details": "这是示例，请替换成你的作品。\nThis is an example card. Replace it with your own piece.",
-    "photos": []
+    "photos": [
+     "img/sold-1.jpg"
+    ]
    }
   ],
   "handwritten": [
