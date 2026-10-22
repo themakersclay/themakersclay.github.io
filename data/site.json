@@ -169,18 +169,54 @@
    }
   ]
  },
- "cupphrases": [
-  "img/handwriting/text/zh-01-notebook.png",
-  "img/handwriting/text/zh-02-how-long.png",
-  "img/handwriting/text/zh-03-compare-flowers.png",
-  "img/handwriting/text/zh-04-fear-failure.png",
-  "img/handwriting/text/zh-05-heavy-bag.png",
-  "img/handwriting/text/zh-06-open-shop.png",
-  "img/handwriting/text/zh-07-small-me.png",
-  "img/handwriting/text/zh-08-blame.png",
-  "img/handwriting/text/zh-10-water-sweet.png",
-  "img/handwriting/text/zh-11-clouds-grandma.png",
-  "img/handwriting/text/zh-12-barber.png",
-  "img/handwriting/text/zh-13-haircut.png"
+ "scenes": [
+  {
+   "text": "img/handwriting/text/zh-01-notebook.png",
+   "art": "img/handwriting/illustrations/book.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-02-how-long.png",
+   "art": "img/handwriting/illustrations/clock.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-03-compare-flowers.png",
+   "art": "img/handwriting/illustrations/flowers-mirror.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-04-fear-failure.png",
+   "art": "img/handwriting/illustrations/rain-cloud.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-05-heavy-bag.png",
+   "art": "img/handwriting/illustrations/turtle.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-06-open-shop.png",
+   "art": "img/handwriting/illustrations/open-sign.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-07-small-me.png",
+   "art": "img/handwriting/illustrations/sprout.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-08-blame.png",
+   "art": "img/handwriting/illustrations/bird.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-10-water-sweet.png",
+   "art": "img/illustrations/cup-and-flower.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-11-clouds-grandma.png",
+   "art": "img/illustrations/window-blind-shadow.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-12-barber.png",
+   "art": "img/illustrations/chair-and-books.png"
+  },
+  {
+   "text": "img/handwriting/text/zh-13-haircut.png",
+   "art": "img/illustrations/window-donut-coffee.png"
+  }
  ]
 }
