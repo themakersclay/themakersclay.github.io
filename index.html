@@ -199,7 +199,7 @@ html[data-lang=en] .card h3 .en{font-size:15px;color:var(--ink)}
 .empty-grid{grid-column:1/-1;color:var(--ink-soft);font-size:13.5px;padding:24px 0;border-top:1px solid var(--hair)}
 
 /* ---------- about ---------- */
-.about{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start;max-width:1040px;margin-inline:auto;padding-top:clamp(8px,3vw,40px)}
+.about{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(24px,3.5vw,44px);align-items:start;max-width:1040px;margin-inline:auto;padding-top:clamp(8px,3vw,40px)}
 .collage{max-width:666px;margin:clamp(40px,7vw,88px) auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .collage img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px;background:var(--paper-deep)}
 @media (max-width:600px){.collage{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
@@ -812,7 +812,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       const tag = EN_KEY.test(key) ? 'en' : ZH_KEYS.has(key) ? 'zh' : null;
       if (ui.editing) { el.textContent = v; continue; }
       if (tag) { el.textContent = v; el.dataset.l = tag; continue; }
-      const f = biFrag(v);
+      const f = NOSPLIT.has(key) ? null : biFrag(v);
       if (f) { el.textContent = ''; el.append(f); } else el.textContent = v;
     }
   }
@@ -888,7 +888,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     }
     return frag;
   }
-  const ZH_KEYS = new Set(['home.title', 'home.note', 'home.idx.pottery', 'home.idx.handwritten', 'home.idx.about', 'pottery.title', 'handwritten.title', 'about.zh', 'about.nameZh']);
+  const ZH_KEYS = new Set(['home.title', 'home.note', 'home.idx.pottery', 'home.idx.handwritten', 'home.idx.about', 'pottery.title', 'handwritten.title', 'about.zh']);
+  const NOSPLIT = new Set(['about.nameZh', 'about.name', 'home.idx.aboutLine']);
   const EN_KEY = /(En|\.subtitle|^about\.en)$/;
   let lang = document.documentElement.dataset.lang === 'en' ? 'en' : 'zh';
   function applyLang() {
