@@ -581,9 +581,11 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         const out = { pottery: [], handwritten: [] };
         rows.slice(1).forEach((r, n) => {
           const cat = g(r, 'category').toLowerCase().startsWith('h') ? 'handwritten' : 'pottery';
-          const name = g(r, 'name'); if (!name) return;
+          let name = g(r, 'name'); if (!name) return;
+          const nameEn = g(r, 'name_en');
+          if (nameEn && name.endsWith(nameEn) && name.length > nameEn.length) name = name.slice(0, -nameEn.length).trim();
           if (g(r, 'show').toLowerCase() === 'no') return;
-          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), lineEn: g(r, 'line_en'), price: g(r, 'price'), size: g(r, 'size'), capacity: g(r, 'capacity'), weight: g(r, 'weight'),
+          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, nameEn, line: g(r, 'line'), lineEn: g(r, 'line_en'), price: g(r, 'price'), size: g(r, 'size'), capacity: g(r, 'capacity'), weight: g(r, 'weight'),
             availability: stat(g(r, 'status')), tags: list(g(r, 'tags'), /[,，;；]/), details: g(r, 'details').replace(/\\n/g, '\n'),
             photos: list(g(r, 'photos'), /[,，;；]/).map(photoUrl) });
         });
@@ -949,7 +951,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     const ph = photoEl((p.photos || [])[0], p.name);
     if (p.availability && p.availability !== 'available') ph.append(h('span', { class: 'badge ' + p.availability }, AV[p.availability] ? AV[p.availability][1] : ''));
     const nm = String(p.name || ''), li = nm.search(/[A-Za-z]/);
-    const zh = li < 0 ? nm : li > 0 ? nm.slice(0, li).trim() : '', en = li < 0 ? '' : nm.slice(li).trim();
+    let zh = li < 0 ? nm : li > 0 ? nm.slice(0, li).trim() : '', en = li < 0 ? '' : nm.slice(li).trim();
+    if (p.nameEn) { zh = nm; en = p.nameEn; }
     const nameEl = h('h3', null, zh ? h('span', { class: 'zh', text: zh, 'data-l': en ? 'zh' : null }) : null, en ? h('span', { class: 'en', text: en, 'data-l': 'en' }) : null);
     const lineEl = p.price ? h('p', { class: 'cardprice', text: p.price }) : null;
     el.append(h('button', { class: 'thumb', type: 'button', 'aria-expanded': String(open), onclick: () => { ui.open[cat] = p.id; ui.confirmDel = null; renderCat(cat); scrollToCard(cat, p.id); } }, ph, nameEl, lineEl));
@@ -996,7 +999,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     return h('div', { class: 'detail' },
       gallery(cat, p, false),
       h('div', { class: 'info' },
-        h('h3', null, p.name || ''),
+        p.nameEn ? h('h3', null, h('span', { class: 'zh', text: p.name || '', 'data-l': 'zh' }), ' ', h('span', { class: 'en', text: p.nameEn, 'data-l': 'en' })) : h('h3', null, p.name || ''),
         p.line ? h('p', { class: 'line', text: p.line, 'data-l': p.lineEn ? 'zh' : (/[A-Za-z]/.test(p.line) && !CJK_RE.test(p.line)) ? 'en' : null }) : null,
         p.lineEn ? h('p', { class: 'line', text: p.lineEn, 'data-l': 'en' }) : null,
         h('dl', { class: 'specs' },
@@ -1013,7 +1016,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
   function orderBtn(cat, p) {
     if (p.availability === 'sold') return h('p', { class: 'soldnote' }, '已售出 Sold out');
     const waitlist = p.availability === 'reserved';
-    const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '');
+    const nm = (waitlist ? '[Waitlist] ' : '') + (p.name || '') + (p.nameEn ? ' ' + p.nameEn : '');
     const base = FORMS[cat] || FORMS.pottery;
     const u = base + (base.includes('?') ? '&' : '?') + 'piece=' + encodeURIComponent(nm) + '&price=' + encodeURIComponent(p.price || '') + '&code=' + encodeURIComponent(p.id || '');
     const one = cat === 'pottery';
