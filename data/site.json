@@ -36,11 +36,6 @@
   "about.photo": "img/illustrations/person-with-glasses.png"
  },
  "layout": {
-  "about.who": {
-   "s": 0.88,
-   "x": -1.92,
-   "y": -2.58
-  },
   "top.avatar": {
    "x": -81.59,
    "y": 0.74,
