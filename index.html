@@ -567,7 +567,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
     {
       const rows = parseCSV(text).filter(r => r.some(x => x.trim()));
       if (rows.length < 2) return false;
-      const head = rows[0].map(x => x.trim().toLowerCase());
+      const head = rows[0].map(x => x.trim().toLowerCase().replace(/[\s-]+/g, '_'));
       const col = (n) => head.indexOf(n);
       const g = (r, n) => { const i = col(n); return i < 0 ? '' : (r[i] || '').trim(); };
       const stat = (v) => OV[v.toLowerCase()] || OV[v] || 'available';
@@ -580,7 +580,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           const cat = g(r, 'category').toLowerCase().startsWith('h') ? 'handwritten' : 'pottery';
           const name = g(r, 'name'); if (!name) return;
           if (g(r, 'show').toLowerCase() === 'no') return;
-          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'), capacity: g(r, 'capacity'), weight: g(r, 'weight'),
+          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), lineEn: g(r, 'line_en'), price: g(r, 'price'), size: g(r, 'size'), capacity: g(r, 'capacity'), weight: g(r, 'weight'),
             availability: stat(g(r, 'status')), tags: list(g(r, 'tags'), /[,，;；]/), details: g(r, 'details').replace(/\\n/g, '\n'),
             photos: list(g(r, 'photos'), /[,，;；]/).map(photoUrl) });
         });
@@ -993,7 +993,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       gallery(cat, p, false),
       h('div', { class: 'info' },
         h('h3', null, p.name || ''),
-        p.line ? h('p', { class: 'line', text: p.line, 'data-l': (/[A-Za-z]/.test(p.line) && !CJK_RE.test(p.line)) ? 'en' : null }) : null,
+        p.line ? h('p', { class: 'line', text: p.line, 'data-l': p.lineEn ? 'zh' : (/[A-Za-z]/.test(p.line) && !CJK_RE.test(p.line)) ? 'en' : null }) : null,
+        p.lineEn ? h('p', { class: 'line', text: p.lineEn, 'data-l': 'en' }) : null,
         h('dl', { class: 'specs' },
           h('dt', null, '价格 Price'), h('dd', { text: p.price || '—' }),
           h('dt', null, '尺寸 Size'), h('dd', { text: p.size || '—' }),
