@@ -200,7 +200,7 @@ html[data-lang=en] .card h3 .en{font-size:15px;color:var(--ink)}
 
 /* ---------- about ---------- */
 .about{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start;max-width:1040px;margin-inline:auto;padding-top:clamp(8px,3vw,40px)}
-.collage{max-width:832px;margin:clamp(40px,7vw,88px) auto 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.collage{max-width:666px;margin:clamp(40px,7vw,88px) auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .collage img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:2px;background:var(--paper-deep)}
 @media (max-width:600px){.collage{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
 .about .who{display:grid;gap:18px;justify-items:center;text-align:center}
@@ -217,7 +217,7 @@ html[data-lang=en] .card h3 .en{font-size:15px;color:var(--ink)}
 /* ---------- footer ---------- */
 .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--hair);margin-top:72px;padding-block:22px 96px}
 .foot img{width:40px;display:block}
-.foot .contact{flex-basis:100%;display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:8px}
+.foot .contact{flex-basis:100%;display:flex;flex-wrap:nowrap;justify-content:flex-end;gap:14px 26px;margin-top:8px}
 .foot .contact a{color:var(--ink-soft);display:grid;justify-items:center;gap:6px;transition:color .2s}
 .foot .contact a:hover{color:var(--ink)}
 .foot .contact a span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em}
@@ -458,10 +458,12 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
       </div>
     </section>
     <section class="collage" aria-label="Lydia at work">
+      <img src="img/about/work-4.webp" alt="Lydia shaping clay on the wheel" loading="lazy">
       <img src="img/about/work-1.webp" alt="Shaping a ball of clay in both hands" loading="lazy">
-      <img src="img/about/work-2.webp" alt="A clay cylinder on the wheel, with a fern behind" loading="lazy">
+      <img src="img/about/work-5.webp" alt="The studio table by the window" loading="lazy">
+      <img src="img/about/work-6.webp" alt="Handwritten notes in a notebook" loading="lazy" style="object-position:38% 50%">
       <img src="img/about/work-3.webp" alt="Kneading clay on the table" loading="lazy" style="object-position:30% 50%">
-      <img src="img/about/work-4.webp" alt="Lydia throwing clay on the wheel" loading="lazy">
+      <img src="img/about/work-2.webp" alt="A clay cylinder on the wheel, with a fern behind" loading="lazy">
     </section>
   </main>
 
