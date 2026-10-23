@@ -184,5 +184,16 @@
    "text": "img/handwriting/text/zh-07-small-me.png",
    "art": "img/handwriting/illustrations/sprout.png"
   }
+ ],
+ "scenesEn": [
+  {
+   "text": "img/handwriting/text/en-cracked-pots.png"
+  },
+  {
+   "text": "img/handwriting/text/en-maybe-cup.png"
+  },
+  {
+   "text": "img/handwriting/text/en-no-perform.png"
+  }
  ]
 }
