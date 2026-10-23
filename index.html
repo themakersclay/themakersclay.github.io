@@ -580,7 +580,7 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
           const cat = g(r, 'category').toLowerCase().startsWith('h') ? 'handwritten' : 'pottery';
           const name = g(r, 'name'); if (!name) return;
           if (g(r, 'show').toLowerCase() === 'no') return;
-          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'),
+          out[cat].push({ id: g(r, 'code') || g(r, 'id') || ('s' + n), name, line: g(r, 'line'), price: g(r, 'price'), size: g(r, 'size'), capacity: g(r, 'capacity'), weight: g(r, 'weight'),
             availability: stat(g(r, 'status')), tags: list(g(r, 'tags'), /[,，;；]/), details: g(r, 'details').replace(/\\n/g, '\n'),
             photos: list(g(r, 'photos'), /[,，;；]/).map(photoUrl) });
         });
@@ -997,6 +997,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         h('dl', { class: 'specs' },
           h('dt', null, '价格 Price'), h('dd', { text: p.price || '—' }),
           h('dt', null, '尺寸 Size'), h('dd', { text: p.size || '—' }),
+          p.capacity ? h('dt', null, '容量 Capacity') : null, p.capacity ? h('dd', { text: p.capacity }) : null,
+          p.weight ? h('dt', null, '重量 Weight') : null, p.weight ? h('dd', { text: p.weight }) : null,
           h('dt', null, '状态 Status'), h('dd', null, h('span', { class: 'avail ' + (p.availability || 'available') }, h('i'), `${av[0]} ${av[1]}`)),
           (p.tags || []).length ? h('dt', null, '标签 Tags') : null, (p.tags || []).length ? h('dd', null, tags) : null),
         p.details ? h('p', { class: 'desc', text: p.details }) : null,
@@ -1044,6 +1046,8 @@ body.editing .tp-active{outline:2px solid var(--glaze)!important;outline-offset:
         field('一句话描述 One-line description', 'line'),
         field('价格 Price', 'price', { ph: 'RM 45' }),
         field('尺寸 Size', 'size', { ph: 'Ø 9 cm · H 4 cm' }),
+        field('容量 Capacity', 'capacity', { ph: '130 ml' }),
+        field('重量 Weight', 'weight', { ph: '255 g' }),
         h('label', { for: id('availability') }, '状态 Availability', sel),
         field('标签 Tags (用逗号分开 separate with commas)', 'tags', { ph: '小碟 Dish, 梅 Plum' }),
         field('详细说明 Details', 'details', { area: true }),
